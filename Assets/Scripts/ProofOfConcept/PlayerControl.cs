@@ -67,20 +67,20 @@ public class PlayerControl : MonoBehaviour
     private void FixedUpdate()
     {
         RaycastHit rh;
-        if ( Physics.SphereCast(transform.position, 0.25f, Vector3.down, out rh, 0.26f) ) { vel.y = 0; }
+        if ( Physics.SphereCast(transform.position, 0.25f, Vector3.down, out rh, 0.27f) ) { vel.y = 0; }
 
         vel += Vector3.Normalize(new Vector3(pInput.x, 0, pInput.y)) * speed * Time.deltaTime; // adjust player velocity, normalize increase to ensure consistency
         vel += new Vector3(0, -gravity, 0) * Time.deltaTime; // apply gravity
         if (new Vector3(vel.x, 0, vel.y).magnitude > minVelToTurn) // as long as the player is moving more than a certain amount...
         {
             // rotate the transform based on velocity
-            transform.eulerAngles = new Vector3(0, -(Mathf.Atan2(vel.z, vel.x) * Mathf.Rad2Deg + 90) - 180, 0); //rotate to proper angle
+            transform.eulerAngles = new Vector3(0, -(Mathf.Atan2(vel.z, vel.x) * Mathf.Rad2Deg + 90), 0); //rotate to proper angle
         }
 
         if (pounceInput)
         {
             // apply velocity based on player ANGLE rather than INPUT. This means players can still pounce even when not specifically moving.
-            vel = Vector3.Normalize(new Vector3(Mathf.Sin(Mathf.Deg2Rad * transform.eulerAngles.y), 0, Mathf.Cos(Mathf.Deg2Rad * transform.eulerAngles.y))) * pounceStrength * Time.deltaTime;
+            vel = Vector3.Normalize(new Vector3(-Mathf.Sin(Mathf.Deg2Rad * transform.eulerAngles.y), 0, -Mathf.Cos(Mathf.Deg2Rad * transform.eulerAngles.y))) * pounceStrength * Time.deltaTime;
             vel.y = pounceJumpStrength;
             pounceInput = false;
         }
