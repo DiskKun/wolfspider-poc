@@ -1,10 +1,12 @@
 using UnityEngine;
+using System.Collections;
 
 public class WebControl : MonoBehaviour
 {
     [Tooltip("Sets whether or not the hardware cursor is visible. You will need to restart the scene to see this change.")]
     public bool cursorVisible;
     public GameObject player;
+    [Tooltip("The GameObject that contains the LineRenderer and MeshCollider components for the web")]
     public GameObject webGameObject;
     [Tooltip("Sets the speed at which the web icon rotates.")]
     public float webRotationSpeed;
@@ -47,15 +49,33 @@ public class WebControl : MonoBehaviour
             if (canWeb)
             {
                 webRenderer.SetPosition(0, player.transform.position + Vector3.down * 0.5f); // position 1 of the web line is the player's position + an offset that ensures the player can immediately walk onto the web
-                webRenderer.SetPosition(1, camToWebHit.point); // position 2 is just the webicon position
-
-                Mesh mesh = new Mesh();
-                webRenderer.BakeMesh(mesh, true);
-                webMeshCollider.sharedMesh = mesh; // set the web's mesh collider to the mesh of the linerenderer
+                StartCoroutine(SpinWebBridge(10, 0.1f));
             }
             
         }
     }
+
+    IEnumerator SpinWebBridge(int stepsToTake, float timeToSpin)
+    {
+        Vector3 webDistance = (camToWebHit.point - player.transform.position); // distance between the player and the webicon at time of spin
+        Mesh mesh = new Mesh();
+
+        int step = 0;
+        while (step < stepsToTake)
+        {
+            // incrementally increase the size of the web towards the target
+            webRenderer.SetPosition(1, player.transform.position + webDistance * step/stepsToTake);
+            webRenderer.BakeMesh(mesh, true);
+            webMeshCollider.sharedMesh = mesh;
+            step += 1;
+            yield return new WaitForSeconds(timeToSpin / stepsToTake);
+        }
+        webRenderer.SetPosition(1, camToWebHit.point); 
+        webRenderer.BakeMesh(mesh, true);
+        webMeshCollider.sharedMesh = mesh; // set the web's mesh collider to the mesh of the linerenderer
+    }
+
+    
 
     private void FixedUpdate()
     {
