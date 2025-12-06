@@ -6681,7 +6681,7 @@ MonoBehaviour:
   gravity: 10
   pounceStrength: 1500
   pounceJumpStrength: 2
-  pounceCooldown: 1
+  pounceCooldown: 0.5
   pounceDuration: 0.5
 --- !u!1 &1476952140
 GameObject:
