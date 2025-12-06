@@ -5,6 +5,7 @@ public class WebControl : MonoBehaviour
     [Tooltip("Sets whether or not the hardware cursor is visible. You will need to restart the scene to see this change.")]
     public bool cursorVisible;
     public GameObject player;
+    public GameObject webGameObject;
     [Tooltip("Sets the speed at which the web icon rotates.")]
     public float webRotationSpeed;
 
@@ -16,8 +17,10 @@ public class WebControl : MonoBehaviour
     bool canWeb = false;
 
     Rigidbody rb;
-    Rigidbody playerRB;
     MeshRenderer meshRenderer;
+
+    LineRenderer webRenderer;
+    MeshCollider webMeshCollider;
 
     RaycastHit camToWebHit; // contains the raycasthit data for the raycast between the camera and the webicon; used for placing the webicon
     RaycastHit playerToWebHit; // contains the raycasthit data for the raycast between the player and the webicon; used for shooting the web
@@ -28,33 +31,63 @@ public class WebControl : MonoBehaviour
         Cursor.visible = cursorVisible; // set the hardware cursor's visiblity.
         meshRenderer = GetComponent<MeshRenderer>(); // the meshrenderer of the webicon is needed to change its material's colour
         rb = GetComponent<Rigidbody>(); // the rigidbody of the webicon is needed to change its position and rotation
-        playerRB = player.GetComponent<Rigidbody>(); // the rigidbody of the player is needed to cast a ray between it and the webicon
+
+        webRenderer = webGameObject.GetComponent<LineRenderer>();
+        webMeshCollider = webGameObject.GetComponent<MeshCollider>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Ray ray;
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition); // the ray between the camera and the mouse position
-        Physics.Raycast(ray, out camToWebHit, 100, LayerMask.NameToLayer("Webbable")); // cast the way only detecting hits from the "webbable" layer
+        CastWebIconRays();
 
-        
-        if (Physics.Raycast(playerRB.position, (camToWebHit.point - playerRB.position).normalized, out playerToWebHit, (camToWebHit.point - playerRB.position).magnitude - 0.1f, LayerMask.NameToLayer("Webbable"))) {
-            // if a webbable was hit between the webicon and the player, something is blocking the line of sight. update the webicon's colour to show this.
-            meshRenderer.material.color = disallowWebColor;
-            canWeb = false;
-        } else
+        if (Input.GetMouseButtonDown(0))
         {
-            meshRenderer.material.color = allowWebColor;
-            canWeb = true;
+            if (canWeb)
+            {
+                webRenderer.SetPosition(0, player.transform.position + Vector3.down * 0.5f); // position 1 of the web line is the player's position + an offset that ensures the player can immediately walk onto the web
+                webRenderer.SetPosition(1, camToWebHit.point); // position 2 is just the webicon position
+
+                Mesh mesh = new Mesh();
+                webRenderer.BakeMesh(mesh, true);
+                webMeshCollider.sharedMesh = mesh; // set the web's mesh collider to the mesh of the linerenderer
+            }
+            
         }
     }
 
     private void FixedUpdate()
     {
+        MoveWebIcon();
         
+    }
+
+
+
+    void MoveWebIcon()
+    {
         rb.position = camToWebHit.point;  // set the webicon's position to the first webbable hit between the mouse and the camera
         rb.MoveRotation(Quaternion.Euler(rb.rotation.eulerAngles + Vector3.forward * Time.deltaTime * webRotationSpeed)); // animate the webicon by rotating it along the Z axis
+    }
 
+    void CastWebIconRays()
+    {
+        Ray ray;
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition); // the ray between the camera and the mouse position
+        Physics.Raycast(ray, out camToWebHit, 100, LayerMask.GetMask("Default", "Webbable")); // cast the ray
+
+
+        if (camToWebHit.transform.gameObject.layer != LayerMask.NameToLayer("Webbable") || Physics.Raycast(player.transform.position, (camToWebHit.point - player.transform.position).normalized, out playerToWebHit, (camToWebHit.point - player.transform.position).magnitude - 0.1f, LayerMask.GetMask("Webbable", "Default")))
+        {
+            // if the player points to a non-webbable surface, or if a webbable was hit between the webicon and the player, something is blocking the line of sight. update the webicon's colour to show this.
+            meshRenderer.material.color = disallowWebColor;
+            canWeb = false;
+        }
+        else
+        {
+            meshRenderer.material.color = allowWebColor;
+            canWeb = true;
+        }
     }
 }
