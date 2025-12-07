@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
@@ -24,13 +25,12 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     [Tooltip("Strength of the vertical impulse added to the player when pouncing.")]
     private float pounceJumpStrength = 1;
-    [SerializeField]
     [Tooltip("Time (in seconds) before the player can pounce again.")]
-    private float pounceCooldown = 1;
-    private float pCDTimer = 0; // internal cooldown timer
-    [SerializeField]
+    public float pounceCooldown = 1;
+    [NonSerialized]
+    public float pCDTimer = 0; // internal cooldown timer
     [Tooltip("Amount of time after pouncing that movement keys have no effect. Clamped to Pounce Cooldown.")]
-    private float pounceDuration = 0.1f; // time in seconds for the pounce to lock you out of movement, no greater than pounceCooldown
+    public float pounceDuration = 0.1f; // time in seconds for the pounce to lock you out of movement, no greater than pounceCooldown
 
     private Vector2 pInput; // player movement input
     private bool pounceInput; // pounce input 
