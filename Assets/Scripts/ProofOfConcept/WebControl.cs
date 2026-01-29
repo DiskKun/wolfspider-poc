@@ -1,20 +1,28 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class WebControl : MonoBehaviour
 {
     [Tooltip("Sets whether or not the hardware cursor is visible. You will need to restart the scene to see this change.")]
     public bool cursorVisible;
-    public GameObject player;
+    public PlayerControl player;
     [Tooltip("The GameObject that contains the LineRenderer and MeshCollider components for the web")]
     public GameObject webGameObject;
     [Tooltip("Sets the speed at which the web icon rotates.")]
     public float webRotationSpeed;
 
+    [Tooltip("The amount of silk needed for each use of the bridge")]
+    public int bridgeSilkCost = 1;
+
+    public TextMeshProUGUI silkText;
+
     [Tooltip("The colour the webicon will turn when the target is invalid.")]
-    Color disallowWebColor = new Color(1, 0, 0, 1); 
+    Color disallowWebColor = new Color(1, 0, 0, 1);
     [Tooltip("The colour the webicon will turn when the target is valid.")]
     Color allowWebColor = new Color(1, 1, 1, 1);
+
+
 
     bool canWeb = false;
 
@@ -46,14 +54,39 @@ public class WebControl : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (canWeb)
+            if (canWeb && player.webSilkAmount >= bridgeSilkCost)
             {
+                player.webSilkAmount -= bridgeSilkCost;
+
                 webRenderer.SetPosition(0, player.transform.position + Vector3.down * 0.5f); // position 1 of the web line is the player's position + an offset that ensures the player can immediately walk onto the web
                 StartCoroutine(SpinWebBridge(10, 0.1f));
+
             }
-            
+            else if (canWeb && player.webSilkAmount < bridgeSilkCost )
+            {
+                StartCoroutine(FlashTextColor(silkText, Color.red));
+            }
+
+        }
+        silkText.text = "Silk: " + player.webSilkAmount;
+    }
+
+    IEnumerator FlashTextColor(TextMeshProUGUI text, Color color, int numberOfFlashes = 3, float flashSpeed = 0.1f)
+    {
+        Color originalColor = text.color;
+
+        while (numberOfFlashes > 0)
+        {
+            text.color = color;
+            yield return new WaitForSeconds(flashSpeed);
+            text.color = originalColor;
+            yield return new WaitForSeconds(flashSpeed);
+            numberOfFlashes -= 1;
         }
     }
+
+   
+
 
     IEnumerator SpinWebBridge(int stepsToTake, float timeToSpin)
     {
@@ -64,23 +97,23 @@ public class WebControl : MonoBehaviour
         while (step < stepsToTake)
         {
             // incrementally increase the size of the web towards the target
-            webRenderer.SetPosition(1, player.transform.position + webDistance * step/stepsToTake);
+            webRenderer.SetPosition(1, player.transform.position + webDistance * step / stepsToTake);
             webRenderer.BakeMesh(mesh, true);
             webMeshCollider.sharedMesh = mesh;
             step += 1;
             yield return new WaitForSeconds(timeToSpin / stepsToTake);
         }
-        webRenderer.SetPosition(1, camToWebHit.point); 
+        webRenderer.SetPosition(1, camToWebHit.point);
         webRenderer.BakeMesh(mesh, true);
         webMeshCollider.sharedMesh = mesh; // set the web's mesh collider to the mesh of the linerenderer
     }
 
-    
+
 
     private void FixedUpdate()
     {
         MoveWebIcon();
-        
+
     }
 
 

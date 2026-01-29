@@ -40,6 +40,9 @@ public class PlayerControl : MonoBehaviour
     [Tooltip("Amount of time after pouncing that movement keys have no effect. Clamped to Pounce Cooldown.")]
     public float pounceDuration = 0.1f; // time in seconds for the pounce to lock you out of movement, no greater than pounceCooldown
 
+    [Tooltip("The amount of web silk the player currently has")]
+    public int webSilkAmount = 0;
+
     private Vector2 pInput; // player movement input
     private bool pounceInput; // pounce input 
 
