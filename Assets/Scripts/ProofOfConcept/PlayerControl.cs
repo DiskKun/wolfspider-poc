@@ -19,6 +19,14 @@ public class PlayerControl : MonoBehaviour
     [Tooltip("Amount of gravity to be applied each frame. Higher values apply more gravity. Negative values will make things float up, so be careful!")]
     private float gravity = 1f; // we use custom gravity as well for more control over the game feel
 
+    [Space(20)]
+    [SerializeField]
+    [Tooltip("Amount to multiply movement speed by while sprinting.")]
+    private float sprintMultiplier = 2f;
+
+    private float sprintInput;
+
+    [Space(20)]
     [SerializeField]
     [Tooltip("Strength of the velocity impulse added to the player when pouncing.")]
     private float pounceStrength = 10;
@@ -62,6 +70,7 @@ public class PlayerControl : MonoBehaviour
         }
         
         if (Input.GetButtonDown("Jump") && pCDTimer <= 0) { pounceInput = true; pCDTimer = pounceCooldown; } // queue up a pounce in Update to ensure responsiveness
+        if (Input.GetButton("Sprint")) { sprintInput = sprintMultiplier; } else { sprintInput = 1; } // use floats instead of bools here to save on operations and make code a bit cleaner
     }
 
     private void FixedUpdate()
@@ -69,7 +78,7 @@ public class PlayerControl : MonoBehaviour
         RaycastHit rh;
         if ( Physics.SphereCast(transform.position, 0.25f, Vector3.down, out rh, 0.27f) ) { vel.y = 0; }
 
-        vel += Vector3.Normalize(new Vector3(pInput.x, 0, pInput.y)) * speed * Time.deltaTime; // adjust player velocity, normalize increase to ensure consistency
+        vel += Vector3.Normalize(new Vector3(pInput.x, 0, pInput.y)) * speed * sprintInput * Time.deltaTime; // adjust player velocity, normalize increase to ensure consistency
         vel += new Vector3(0, -gravity, 0) * Time.deltaTime; // apply gravity
         if (new Vector3(vel.x, 0, vel.y).magnitude > minVelToTurn) // as long as the player is moving more than a certain amount...
         {
