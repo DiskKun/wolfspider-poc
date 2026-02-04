@@ -57,6 +57,7 @@ public class PlayerControl : MonoBehaviour
         rb = GetComponent<Rigidbody>(); // get attached rigidbody (we'll be using a capsule collider for 3D movement
         vel = new Vector3(); // reset velocity
         pounceDuration = Mathf.Clamp(pounceDuration, 0f, pounceCooldown); // clamp pounce duration so that it's not longer than cooldown to prevent weirdness from the implementation
+        pCDTimer = 0; // reset cooldown
     }
 
     // Update is called once per frame

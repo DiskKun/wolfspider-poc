@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gamePaused = false; // ensure game is not paused when main scene is loaded
+        Time.timeScale = 1f; // reset time scale
     }
 
     // Update is called once per frame
