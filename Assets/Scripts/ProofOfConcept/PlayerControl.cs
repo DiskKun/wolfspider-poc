@@ -57,7 +57,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField]
     private bool turnTowardsEnemies; // enable and disable this feature
 
-    private Vector3 targetEnemyPos; // enemy to target
+    private Vector3 targetPos; // enemy/NPC to target
 
 
 
@@ -103,7 +103,7 @@ public class PlayerControl : MonoBehaviour
         if (detectEnemies() && turnTowardsEnemies)
         {
             // rotate to face nearby enemy
-            transform.eulerAngles = new Vector3(0, -(Mathf.Atan2(targetEnemyPos.z - transform.position.z, targetEnemyPos.x - transform.position.x) * Mathf.Rad2Deg + 90), 0); //rotate to proper angle
+            transform.eulerAngles = new Vector3(0, -(Mathf.Atan2(targetPos.z - transform.position.z, targetPos.x - transform.position.x) * Mathf.Rad2Deg + 90), 0); //rotate to proper angle
         }
 
         if (pounceInput)
@@ -139,9 +139,13 @@ public class PlayerControl : MonoBehaviour
                     if (cDist < maxDistance)
                     {
                         maxDistance = cDist; // store the new closest enemy distance
-                        targetEnemyPos = c.transform.position; // update target position if the enemy is closer than the previous distance
+                        targetPos = c.transform.position; // update target position if the enemy is closer than the previous distance
                         hitPest = true;
                     }
+                } else if (c.tag == "Baby") // but we PRIORITIZE babies
+                {
+                    targetPos = c.transform.position; // immediately set target position
+                    return true; // we don't need anything else since this takes absolute priority
                 }
 
             }
