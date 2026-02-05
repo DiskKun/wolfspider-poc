@@ -9574,7 +9574,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!136 &1447267175
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9582,7 +9582,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1447267173}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 900a9a34e5782184a9375cffaae644f9, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -9636,6 +9636,8 @@ MonoBehaviour:
   pounceCooldown: 0.75
   pounceDuration: 0.5
   webSilkAmount: 0
+  enemyDetectionRadius: 4
+  turnTowardsEnemies: 1
 --- !u!4 &1447761899 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1119059824389383954, guid: ed2313b8e6cb8d344bd8e333474be54d, type: 3}

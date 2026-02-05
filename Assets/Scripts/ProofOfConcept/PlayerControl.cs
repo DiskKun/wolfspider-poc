@@ -1,9 +1,10 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    
+
     Rigidbody rb;
 
     [SerializeField]
@@ -47,7 +48,16 @@ public class PlayerControl : MonoBehaviour
     private bool pounceInput; // pounce input 
 
     private Vector3 vel; // velocity for use with movement
-    private float minVelToTurn = 0.1f;
+    private float minVelToTurn = 0.2f;
+
+    [Space(20)]
+
+    [Tooltip("How far away (in units) to detect enemies from, for pounce purposes.")]
+    public float enemyDetectionRadius;
+    [SerializeField]
+    private bool turnTowardsEnemies; // enable and disable this feature
+
+    private Vector3 targetEnemyPos; // enemy to target
 
 
 
@@ -90,6 +100,12 @@ public class PlayerControl : MonoBehaviour
             transform.eulerAngles = new Vector3(0, -(Mathf.Atan2(vel.z, vel.x) * Mathf.Rad2Deg + 90), 0); //rotate to proper angle
         }
 
+        if (detectEnemies() && turnTowardsEnemies)
+        {
+            // rotate to face nearby enemy
+            transform.eulerAngles = new Vector3(0, -(Mathf.Atan2(targetEnemyPos.z - transform.position.z, targetEnemyPos.x - transform.position.x) * Mathf.Rad2Deg + 90), 0); //rotate to proper angle
+        }
+
         if (pounceInput)
         {
             // apply velocity based on player ANGLE rather than INPUT. This means players can still pounce even when not specifically moving.
@@ -100,5 +116,47 @@ public class PlayerControl : MonoBehaviour
         vel = new Vector3(vel.x * (1-friction), vel.y, vel.z * (1-friction)); //reduce horizontal velocity based on specified friction
         rb.linearVelocity = vel; //update player velocity
 
+    }
+
+    private bool detectEnemies()
+    {
+        Vector3 pos = transform.position;
+
+        Collider[] hits = Physics.OverlapSphere(pos, enemyDetectionRadius); // run a spherecast;
+        bool hitPest = false;
+
+        if (hits.Length > 0) // if we've hit something
+        {
+            float maxDistance = 99999; // set this to a ludicrously high value first - we'll be using this to recognize the closest enemy
+
+            for (int i = 0; i < hits.Length; i++)
+            {
+                GameObject c = hits[i].gameObject; // store a reference to the hit object's GameObject
+
+                if (c.tag == "Pest") // we only want to check pests
+                {
+                    float cDist = Vector3.Distance(transform.position, c.transform.position);
+                    if (cDist < maxDistance)
+                    {
+                        maxDistance = cDist; // store the new closest enemy distance
+                        targetEnemyPos = c.transform.position; // update target position if the enemy is closer than the previous distance
+                        hitPest = true;
+                    }
+                }
+
+            }
+        }
+
+
+        return hitPest;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (turnTowardsEnemies)
+        {
+            Gizmos.color = new Color(0,0,1,0.25f); // transparent blue
+            Gizmos.DrawSphere(transform.position, enemyDetectionRadius);
+        }
     }
 }

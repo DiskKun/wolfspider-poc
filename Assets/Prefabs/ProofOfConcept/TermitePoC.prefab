@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 6172015478150941143}
   m_Layer: 0
   m_Name: TermitePoC
-  m_TagString: Untagged
+  m_TagString: Pest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

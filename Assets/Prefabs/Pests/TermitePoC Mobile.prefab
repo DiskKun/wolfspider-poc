@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: -2972711427692808572}
   m_Layer: 0
   m_Name: TermitePoC Mobile
-  m_TagString: Untagged
+  m_TagString: Pest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,9 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c073b0fc6bb9ef6418807ab6ef9e6499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawner: 0
-  maxSpawns: 0
-  spawnDelay: 0
   pathNodes: []
   nodePause: 0
   nodeDistance: 0
