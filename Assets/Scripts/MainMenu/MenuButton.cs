@@ -11,6 +11,11 @@ public class MenuButton : MonoBehaviour
     private GameObject SettingsMenu;
     [SerializeField]
     private GameObject LoadingScreen;
+    [SerializeField]
+    private GameObject SplashScreen;
+    [SerializeField]
+    [Tooltip("Time in seconds for the splash screen to stay on-screen when the project loads.")]
+    private float splashScreenTimer;
 
     [Space(20)]
 
@@ -18,6 +23,19 @@ public class MenuButton : MonoBehaviour
     private SceneAsset GameplayScene;
 
 
+
+    void Update()
+    {
+        if (splashScreenTimer > 0)
+        {
+            splashScreenTimer -= Time.deltaTime; // only keep the splash screen on-screen for a certain amount of time
+            if (splashScreenTimer <= 0)
+            {
+                SplashScreen.SetActive(false); // then activate the main menu
+                MainMenu.SetActive(true);
+            }
+        }
+    }
 
     public void StartButtonClick()
     {
