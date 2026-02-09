@@ -55,6 +55,7 @@ public class PestController : MonoBehaviour
         if (other.gameObject.tag == "Player" && pc.pounceCooldown - pc.pCDTimer <= pc.pounceDuration) //collision with player while pouncing
         {
             pc.webSilkAmount += 1;
+            pc.playEatSound(); // tell the player to play the eat sound effect
             gameObject.SetActive(false); // make this inactive to free up more spawns
         }
     }

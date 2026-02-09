@@ -59,6 +59,20 @@ public class PlayerControl : MonoBehaviour
 
     private Vector3 targetPos; // enemy/NPC to target
 
+    private AudioSource audioSource; //audio source to play SFX
+    [Space(40)]
+
+    public SFX_Pounce SFX_Pounce;
+    private AudioClip pounceSFX;
+
+    public SFX_Eat SFX_Eat;
+    private AudioClip eatSFX;
+
+    public SFX_Walk SFX_Walk;
+    private AudioClip walkSFX;
+    private float walkRepeatDelay = 0.1f; // delay between footstep sounds
+    private float walkSoundTimer = 0f;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -68,6 +82,12 @@ public class PlayerControl : MonoBehaviour
         vel = new Vector3(); // reset velocity
         pounceDuration = Mathf.Clamp(pounceDuration, 0f, pounceCooldown); // clamp pounce duration so that it's not longer than cooldown to prevent weirdness from the implementation
         pCDTimer = 0; // reset cooldown
+
+        audioSource = GetComponent<AudioSource>();
+
+        pounceSFX = SFX_Pounce.pounceSFX; // load audio hooks
+        eatSFX = SFX_Eat.eatSFX;
+        walkSFX = SFX_Walk.walkSFX;
     }
 
     // Update is called once per frame
@@ -78,9 +98,19 @@ public class PlayerControl : MonoBehaviour
         if (pounceCooldown - pCDTimer >= pounceDuration) {
             pInput.x = Input.GetAxisRaw("Horizontal"); // we use two separate operations here as it's slightly
             pInput.y = Input.GetAxisRaw("Vertical");   // more efficient than creating a new Vector2 every frame
+            if (Mathf.Abs(pInput.x) > 0 || Mathf.Abs(pInput.y) > 0) // if the player is inputting movement
+            {
+                walkSoundTimer -= Time.deltaTime;
+                if (walkSoundTimer <= 0f) // play footstep sound on a repeating timer
+                {
+                    walkSoundTimer = walkRepeatDelay;
+                    audioSource.PlayOneShot(walkSFX);
+                }
+            }
         } else
         {
             pInput.x = 0; pInput.y = 0; // keep them at zero for the duration
+            walkSoundTimer = 0; // reset footstep timer to queue up a walk SFX as soon as the player starts moving again
         }
         
         if (Input.GetButtonDown("Jump") && pCDTimer <= 0) { pounceInput = true; pCDTimer = pounceCooldown; } // queue up a pounce in Update to ensure responsiveness
@@ -111,6 +141,7 @@ public class PlayerControl : MonoBehaviour
             // apply velocity based on player ANGLE rather than INPUT. This means players can still pounce even when not specifically moving.
             vel = Vector3.Normalize(new Vector3(-Mathf.Sin(Mathf.Deg2Rad * transform.eulerAngles.y), 0, -Mathf.Cos(Mathf.Deg2Rad * transform.eulerAngles.y))) * pounceStrength * Time.deltaTime;
             vel.y = pounceJumpStrength;
+            audioSource.PlayOneShot(pounceSFX, 1f); // play pounce SFX
             pounceInput = false;
         }
         vel = new Vector3(vel.x * (1-friction), vel.y, vel.z * (1-friction)); //reduce horizontal velocity based on specified friction
@@ -153,6 +184,11 @@ public class PlayerControl : MonoBehaviour
 
 
         return hitPest;
+    }
+
+    public void playEatSound()
+    {
+        audioSource.PlayOneShot(eatSFX, 1f);
     }
 
     private void OnDrawGizmos()

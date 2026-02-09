@@ -34,6 +34,18 @@ public class WebControl : MonoBehaviour
     [Tooltip("The color the webicon will turn when the player can click to pull the item they are attached to.")]
     Color clickToPullColor = new Color(0, 1, 0, 1);
 
+    private AudioSource audioSource; //audio source to play SFX
+    [Space(40)]
+
+    public SFX_WebShot SFX_WebShot;
+    private AudioClip webShotSFX;
+
+    public SFX_WebPull SFX_WebPull;
+    private AudioClip webPullSFX;
+    private float pullRepeatDelay = 0.5f; // delay between pull sounds
+    private float pullSoundTimer = 0f;
+
+
 
     bool canBridge = false;
     bool canPull = false;
@@ -63,6 +75,12 @@ public class WebControl : MonoBehaviour
         bridgeMeshCollider = bridgeGameObject.GetComponent<MeshCollider>();
         ropeRenderer = ropeGameObject.GetComponent<LineRenderer>();
 
+
+        audioSource = GetComponent<AudioSource>();
+
+        webShotSFX = SFX_WebShot.webShotSFX; // load audio hooks
+        webPullSFX = SFX_WebPull.webPullSFX;
+
     }
 
     // Update is called once per frame
@@ -79,6 +97,8 @@ public class WebControl : MonoBehaviour
                 bridgeRenderer.SetPosition(0, player.transform.position + Vector3.down * 0.5f); // position 1 of the web line is the player's position + an offset that ensures the player can immediately walk onto the web
                 StartCoroutine(SpinWebBridge(10, 0.1f));
 
+                audioSource.PlayOneShot(webShotSFX, 1f); // play web shot sfx
+
             }
             else if (canBridge && player.webSilkAmount < bridgeSilkCost)
             {
@@ -88,6 +108,8 @@ public class WebControl : MonoBehaviour
                 ropeRenderer.SetPosition(0, player.transform.position + Vector3.down * 0.5f); // position 1 of the web line is the player's position + an offset that ensures the player can immediately walk onto the web
 
                 StartCoroutine(SpinWebRope(10, 0.1f));
+
+                audioSource.PlayOneShot(webShotSFX, 1f); // play web shot sfx
             }
 
         }
@@ -105,8 +127,17 @@ public class WebControl : MonoBehaviour
             ropeRenderer.SetPosition(0, player.transform.position);
             ropeRenderer.SetPosition(1, pullPoint.position);
             
+            pullSoundTimer -= Time.deltaTime;
+            if (pullSoundTimer <= 0) // play pull sound on a repeating timer
+            {
+                audioSource.PlayOneShot(webShotSFX, 1f); // play web pull sfx
+                pullSoundTimer = pullRepeatDelay; // reset timer
+            }
+        } else // if nothing is being pulled at the moment
+        {
+            pullSoundTimer = 0f; // reset pull sound timer to queue a sound up the next time the player pulls the rope
         }
-        silkText.text = "Silk: " + player.webSilkAmount;
+            silkText.text = "Silk: " + player.webSilkAmount;
     }
 
     IEnumerator FlashTextColor(TextMeshProUGUI text, Color color, int numberOfFlashes = 3, float flashSpeed = 0.1f)
