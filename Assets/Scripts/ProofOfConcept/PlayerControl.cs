@@ -58,6 +58,7 @@ public class PlayerControl : MonoBehaviour
     private bool turnTowardsEnemies; // enable and disable this feature
 
     private Vector3 targetPos; // enemy/NPC to target
+    private GameObject targetObject; // GameObject belonging to the target
 
     private AudioSource audioSource; //audio source to play SFX
     [Space(40)]
@@ -113,7 +114,17 @@ public class PlayerControl : MonoBehaviour
             walkSoundTimer = 0; // reset footstep timer to queue up a walk SFX as soon as the player starts moving again
         }
         
-        if (Input.GetButtonDown("Jump") && pCDTimer <= 0) { pounceInput = true; pCDTimer = pounceCooldown; } // queue up a pounce in Update to ensure responsiveness
+        if (Input.GetButtonDown("Jump")) // queue up a pounce in Update to ensure responsiveness
+        {
+            if (detectEnemies() == "NPC")
+            {
+                targetObject.GetComponent<NPC_Base>().NPC_Interaction.Invoke(); // call the interaction function
+            } else if (pCDTimer <= 0)
+            {
+                pounceInput = true; pCDTimer = pounceCooldown;
+            }
+            
+        }
         if (Input.GetButton("Sprint")) { sprintInput = sprintMultiplier; } else { sprintInput = 1; } // use floats instead of bools here to save on operations and make code a bit cleaner
     }
 
@@ -130,7 +141,7 @@ public class PlayerControl : MonoBehaviour
             transform.eulerAngles = new Vector3(0, -(Mathf.Atan2(vel.z, vel.x) * Mathf.Rad2Deg + 90), 0); //rotate to proper angle
         }
 
-        if (detectEnemies() && turnTowardsEnemies)
+        if (detectEnemies() != "none" && turnTowardsEnemies)
         {
             // rotate to face nearby enemy
             transform.eulerAngles = new Vector3(0, -(Mathf.Atan2(targetPos.z - transform.position.z, targetPos.x - transform.position.x) * Mathf.Rad2Deg + 90), 0); //rotate to proper angle
@@ -149,12 +160,12 @@ public class PlayerControl : MonoBehaviour
 
     }
 
-    private bool detectEnemies()
+    private string detectEnemies()
     {
         Vector3 pos = transform.position;
 
         Collider[] hits = Physics.OverlapSphere(pos, enemyDetectionRadius); // run a spherecast;
-        bool hitPest = false;
+        string hitPest = "none";
 
         if (hits.Length > 0) // if we've hit something
         {
@@ -171,12 +182,18 @@ public class PlayerControl : MonoBehaviour
                     {
                         maxDistance = cDist; // store the new closest enemy distance
                         targetPos = c.transform.position; // update target position if the enemy is closer than the previous distance
-                        hitPest = true;
+                        hitPest = "Pest";
                     }
                 } else if (c.tag == "Baby") // but we PRIORITIZE babies
                 {
                     targetPos = c.transform.position; // immediately set target position
-                    return true; // we don't need anything else since this takes absolute priority
+                    return "Baby"; // we don't need anything else since this takes absolute priority
+
+                } else if (c.tag == "NPC") // we also prioritize NPCs to interact, although slightly less than babies.
+                {
+                    targetPos = c.transform.position; // immediately set target position
+                    targetObject = c.gameObject; // we need to get the NPC's GameObject for interaction functionality
+                    return "NPC"; // we don't need anything else since this takes priority
                 }
 
             }

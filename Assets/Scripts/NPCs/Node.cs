@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PestNode : MonoBehaviour
+public class Node : MonoBehaviour
 {
     [SerializeField]
     private Color nodeColor;

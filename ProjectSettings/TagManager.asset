@@ -7,6 +7,7 @@ TagManager:
   - Pest
   - Baby
   - Carried
+  - NPC
   layers:
   - Default
   - TransparentFX

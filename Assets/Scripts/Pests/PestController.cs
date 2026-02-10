@@ -34,7 +34,7 @@ public class PestController : MonoBehaviour
             {
                 pauseTimer = nodePause; // reset pause timer
 
-                nodeID += 1;
+                nodeID++;
                 if (nodeID == pathNodes.Length)
                 {
                     nodeID = 0; // loop back to first node in list

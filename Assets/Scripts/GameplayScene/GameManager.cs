@@ -15,7 +15,15 @@ public class GameManager : MonoBehaviour
     [Space(20)]
 
     [SerializeField]
+    [Tooltip("Contains a reference to the Main Menu scene.")]
     private SceneAsset MainMenuScene;
+
+    [Space(20)]
+
+    [SerializeField]
+    [Tooltip("Contains a reference to the scene that will be loaded after this level is completed. Ensure that the target scene is included in the build settings scene list!")]
+    private SceneAsset NextScene;
+    private bool loadingNext = false; // whether we're loading the next level yet
 
 
 
@@ -25,6 +33,7 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        loadingNext = false; // make sure the script doesn't think we're loading the next level
         gamePaused = false; // ensure game is not paused when main scene is loaded
         Time.timeScale = 1f; // reset time scale
     }
@@ -32,7 +41,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !loadingNext)
         {
             TogglePauseGame(); // pause or resume the game when esc key pressed
         }
@@ -88,6 +97,16 @@ public class GameManager : MonoBehaviour
         {
             yield return null;
         }
+    }
+
+    public void LoadNextScene() // can be called from any script with a reference to the GameManager object to load the next scene
+    {
+        loadingNext = true;
+        PauseMenu.SetActive(false);
+        SettingsMenu.SetActive(false); // disable all other menus
+        LoadingScreen.SetActive(true); // enable loading screen
+        Time.timeScale = 0f; // really hacky solution to "disable" player movement and game interactions while loading the next scene. This can be replaced later if need be.
+        LoadSceneAsync(NextScene.name);
     }
 
 }
