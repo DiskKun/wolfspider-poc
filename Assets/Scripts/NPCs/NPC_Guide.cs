@@ -66,9 +66,8 @@ public class NPC_Guide : NPC_Base
     protected override void OnInteract()
     {
         // interaction code here
-        dm.ShowDialogue("F01");
+        dm.ShowDialogue(dialogueIDSequence[nodeID]);
         NextNode();
-        
     }
 
     public void NextNode()

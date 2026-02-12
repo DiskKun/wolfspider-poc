@@ -21,7 +21,7 @@ public class DialogueManager : MonoBehaviour
         Array.Resize(ref DialogueText, dLines.Length);
         foreach (string s in dLines)
         {
-            DialogueText[index] = s.Split("\t");
+            DialogueText[index] = s.Replace("\"", "").Split("\t");
             index++;
         }
 

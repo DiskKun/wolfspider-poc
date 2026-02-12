@@ -2324,6 +2324,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dm: {fileID: 970377351}
+  dialogueIDSequence:
+  - F01
+  - F08
+  - END
+  - END
+  - END
+  - END
+  - END
+  - END
+  - END
+  - END
+  - END
+  - END
+  - F04
   requireInteract: 1
   detectionRadius: 3
   speed: 5

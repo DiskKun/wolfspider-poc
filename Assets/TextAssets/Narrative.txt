@@ -9,11 +9,6 @@ P02	But we just moved here...	F06
 F06	Well I'm glad your family is here so you can help me to get rid of them 	P03
 P03	Right... right! Mom we have to go! I heard they took a spider to the queen from the termites! 	F07
 F07	The queen should be in the living room. Let's go. 	END
-		
-		
-		
-		
-		
-		
-		
-		
+F08	You'll have to use your web to get up here!	F09
+F09	Click when your web icon is white to spin a bridge of silk.	F10
+F10	"If you don't have silk, eat some termites!"	END
