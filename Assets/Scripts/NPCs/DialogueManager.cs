@@ -48,7 +48,11 @@ public class DialogueManager : MonoBehaviour
         {
             if (s[0] == id)
             {
-                return s[2].Remove(3); // for some INEXPLICABLE reason, a CARRIAGE RETURN is inserted into the string by default, so it must be removed. It took me like 2 hours to figure out what was going on, not an easy problem to see because it's an invisible character fucking things up!!!
+                if (s[2].Length >= 4)
+                {
+                    s[2] = s[2].Remove(3);
+                }
+                return s[2]; // for some INEXPLICABLE reason, a CARRIAGE RETURN is inserted into the string by default, so it must be removed. It took me like 2 hours to figure out what was going on, not an easy problem to see because it's an invisible character fucking things up!!!
             }
         }
         return id + "ERR: DIALOGUE ID NOT FOUND";

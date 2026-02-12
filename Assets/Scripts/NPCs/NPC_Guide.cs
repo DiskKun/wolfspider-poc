@@ -5,6 +5,9 @@ public class NPC_Guide : NPC_Base
     [Tooltip("Reference to the dialogue manager gameobject")]
     public DialogueManager dm;
 
+    [Tooltip("The ID of each STARTING line of dialogue.")]
+    public string[] dialogueIDSequence = { };
+
     [SerializeField]
     [Tooltip("Whether this guide NPC should require the player to interact with them before moving to the next location. If left unchecked, the NPC will move on as soon as the player gets within range.")]
     [Header("WARNING: If this is enabled, this \nGameObject MUST have the \"NPC\" tag!")]
@@ -62,9 +65,16 @@ public class NPC_Guide : NPC_Base
 
     protected override void OnInteract()
     {
-        Debug.Log("Guide interaction complete!");
-        dm.ShowDialogue("F01");
         // interaction code here
+        dm.ShowDialogue("F01");
+        NextNode();
+        
+    }
+
+    public void NextNode()
+    {
+        target = guideNodes[nodeID].transform.position;
+        nodeID++;
     }
 
     private bool detectPlayer()
