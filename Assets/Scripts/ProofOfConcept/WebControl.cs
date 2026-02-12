@@ -239,7 +239,7 @@ public class WebControl : MonoBehaviour
             canBridge = true;
             canPull = false;
         }
-        else if (camToWebHit.transform.gameObject.layer == LayerMask.NameToLayer("Pullable") && !Physics.Raycast(player.transform.position, (camToWebHit.point - player.transform.position).normalized, out playerToWebHit, (camToWebHit.point - player.transform.position).magnitude - 0.1f, LayerMask.GetMask("Webbable", "Pullable", "Default")))
+        else if (camToWebHit.transform.gameObject.layer == LayerMask.NameToLayer("Pullable"))
         {
             meshRenderer.material.color = allowPullColor;
             canPull = true;
