@@ -1,6 +1,6 @@
 Dialogue ID	Dialogue	Go To
-F01	"""Oh thank god, you are awake! The big one doesn't like us bugs... you should be more careful."""	F02
-F02	"""Looking for your baby? Relax, I think I saw one landing in this room."""	F03
+F01	"Oh thank god, you are awake! The big one doesn't like us bugs... you should be more careful."	F02
+F02	"Looking for your baby? Relax, I think I saw one landing in this room."	F03
 F03	"I can guide you, follow me!"	END
 P01	Mom! You found me! I was hiding here because there were so many termites.	F04
 F04	Yes..! They are such a big problem to us. Absolutely OUT OF CONTROL. They even ate my garden table last time.	F05
@@ -9,3 +9,11 @@ P02	But we just moved here...	F06
 F06	Well I'm glad your family is here so you can help me to get rid of them 	P03
 P03	Right... right! Mom we have to go! I heard they took a spider to the queen from the termites! 	F07
 F07	The queen should be in the living room. Let's go. 	END
+		
+		
+		
+		
+		
+		
+		
+		

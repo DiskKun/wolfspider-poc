@@ -25,7 +25,6 @@ public class DialogueManager : MonoBehaviour
             index++;
         }
 
-        ShowDialogue("F01");
     }
 
     string GetDialogueLineByID(string id) // returns the line of dialogue associated with the given dialogue ID (column 1 of the spreadsheet)
