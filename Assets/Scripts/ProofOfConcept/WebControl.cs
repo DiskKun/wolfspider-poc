@@ -245,7 +245,9 @@ public class WebControl : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                pulling.AddForce((player.transform.position - pullPoint.transform.position).normalized * Time.deltaTime * ropePullSpeed);
+                Vector3 force = (player.transform.position - pullPoint.transform.position).normalized * Time.deltaTime * ropePullSpeed;
+                force.y = 0;
+                pulling.AddForce(force);
                 //pulling.MoveRotation((pullPoint.transform.position - player.transform.position).normalized)
             }
         }

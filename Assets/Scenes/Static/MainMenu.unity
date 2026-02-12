@@ -158,7 +158,7 @@ MonoBehaviour:
   LoadingScreen: {fileID: 474159805}
   SplashScreen: {fileID: 6283288453795987511}
   splashScreenTimer: 2
-  GameplayScene: {fileID: 102900000, guid: afda1ca3dd54cea4c99e12b9c488d41f, type: 3}
+  GameplayScene: {fileID: 102900000, guid: 88e11ef910279b24e8b46bfeefd2218a, type: 3}
 --- !u!4 &555095726
 Transform:
   m_ObjectHideFlags: 0
