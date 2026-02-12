@@ -12,6 +12,8 @@ public class PestController : MonoBehaviour
     [Tooltip("How fast the pest should move (in Units per second).")]
     public float speed;
 
+    WebControl webController;
+
     private float targetAcceptanceRange = 0.5f; // constant value that provides a bit of leeway for how far away the pest can be from its target and still count it as "reached"
 
     private Vector3 target = new Vector3();
@@ -54,7 +56,7 @@ public class PestController : MonoBehaviour
         PlayerControl pc = other.gameObject.GetComponent<PlayerControl>();
         if (other.gameObject.tag == "Player" && pc.pounceCooldown - pc.pCDTimer <= pc.pounceDuration) //collision with player while pouncing
         {
-            pc.webSilkAmount += 1;
+            webController.GetSilk(1);
             pc.playEatSound(); // tell the player to play the eat sound effect
             gameObject.SetActive(false); // make this inactive to free up more spawns
         }
@@ -71,6 +73,8 @@ public class PestController : MonoBehaviour
         {
             getTargetPos(nodeID);
         }
+
+        webController = GameObject.Find("WebIcon").GetComponent<WebControl>();
         
     }
 

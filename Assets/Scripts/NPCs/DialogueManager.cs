@@ -29,7 +29,6 @@ public class DialogueManager : MonoBehaviour
 
     string GetDialogueLineByID(string id) // returns the line of dialogue associated with the given dialogue ID (column 1 of the spreadsheet)
     {
-        Debug.Log("Finding line ID !" + id + "!");
         foreach (string[] s in DialogueText)
         {
             if (s[0] == id)
@@ -43,7 +42,6 @@ public class DialogueManager : MonoBehaviour
 
     string GetNextDialogueLineID(string id)
     {
-        Debug.Log("Finding next line for ID !" + id + "!");
         foreach (string[] s in DialogueText)
         {
             if (s[0] == id)

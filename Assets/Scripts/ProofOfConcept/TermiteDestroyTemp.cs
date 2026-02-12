@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class TermiteDestroyTemp : MonoBehaviour
 {
+    public WebControl wc;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,7 +20,7 @@ public class TermiteDestroyTemp : MonoBehaviour
         PlayerControl pc = other.gameObject.GetComponent<PlayerControl>();
         if (other.gameObject.tag == "Player" && pc.pounceCooldown - pc.pCDTimer <= pc.pounceDuration) //collision with player while pouncing
         {
-            pc.webSilkAmount += 1;
+            wc.webSilkAmount += 1;
             Destroy(gameObject);
         }
     }

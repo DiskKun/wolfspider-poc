@@ -14,6 +14,9 @@ public class WebControl : MonoBehaviour
     [Tooltip("Sets the speed at which the web icon rotates.")]
     public float webRotationSpeed;
 
+    [Tooltip("The amount of web silk the player currently has")]
+    public int webSilkAmount = 0;
+
     //public Material webIconMaterial;
     //public Material pullTextMaterial;
 
@@ -23,6 +26,14 @@ public class WebControl : MonoBehaviour
     public float ropePullSpeed = 1;
 
     public TextMeshProUGUI silkText;
+
+
+    [Header("Silk Animation Settings")]
+    [Tooltip("The icon that will animate towards the UI")]
+    public GameObject silkIconPrefab;
+    [Tooltip("The animation curve for the silk icon's travel")]
+    public AnimationCurve silkAnimationCurve;
+
 
 
     [Tooltip("The colour the webicon will turn when the target is invalid.")]
@@ -90,9 +101,9 @@ public class WebControl : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (canBridge && player.webSilkAmount >= bridgeSilkCost)
+            if (canBridge && webSilkAmount >= bridgeSilkCost)
             {
-                player.webSilkAmount -= bridgeSilkCost;
+                webSilkAmount -= bridgeSilkCost;
 
                 bridgeRenderer.SetPosition(0, player.transform.position + Vector3.down * 0.5f); // position 1 of the web line is the player's position + an offset that ensures the player can immediately walk onto the web
                 StartCoroutine(SpinWebBridge(10, 0.1f));
@@ -100,7 +111,7 @@ public class WebControl : MonoBehaviour
                 audioSource.PlayOneShot(webShotSFX, 1f); // play web shot sfx
 
             }
-            else if (canBridge && player.webSilkAmount < bridgeSilkCost)
+            else if (canBridge && webSilkAmount < bridgeSilkCost)
             {
                 StartCoroutine(FlashTextColor(silkText, Color.red));
             } else if (canPull)
@@ -137,7 +148,8 @@ public class WebControl : MonoBehaviour
         {
             pullSoundTimer = 0f; // reset pull sound timer to queue a sound up the next time the player pulls the rope
         }
-            silkText.text = "Silk: " + player.webSilkAmount;
+        silkText.text = webSilkAmount.ToString();
+
     }
 
     IEnumerator FlashTextColor(TextMeshProUGUI text, Color color, int numberOfFlashes = 3, float flashSpeed = 0.1f)
@@ -152,6 +164,28 @@ public class WebControl : MonoBehaviour
             yield return new WaitForSeconds(flashSpeed);
             numberOfFlashes -= 1;
         }
+    }
+
+    public void GetSilk(int amount)
+    {
+        StartCoroutine(AnimateSilkCollect(amount));
+    }
+
+    IEnumerator AnimateSilkCollect(int amount)
+    {
+        GameObject animObj = Instantiate(silkIconPrefab, Camera.main.WorldToScreenPoint(player.transform.position), Quaternion.identity, silkText.transform.parent.parent);
+
+
+        float t = 0;
+        Vector3 startPos = animObj.transform.position;
+        while (animObj.transform.position != silkText.transform.parent.position)
+        {
+            animObj.transform.position = Vector3.Lerp(startPos, silkText.transform.parent.position, silkAnimationCurve.Evaluate(t));
+            t += Time.deltaTime;
+            yield return null;
+        }
+        Destroy(animObj);
+        webSilkAmount += amount;
     }
 
 
