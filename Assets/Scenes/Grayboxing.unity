@@ -2237,11 +2237,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dm: {fileID: 970377351}
   dialogueIDSequence:
-  - F01
-  - F08
-  - END
-  - END
-  - END
+  - G01
+  - G04
+  - G06
+  - G08
+  - G10
   - END
   - END
   - END

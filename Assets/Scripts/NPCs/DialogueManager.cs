@@ -60,9 +60,11 @@ public class DialogueManager : MonoBehaviour
     {
         if (id == "END")
         {
+            Time.timeScale = 1;
             dialogueBoxTextMesh.transform.parent.gameObject.SetActive(false);
             return;
         }
+        Time.timeScale = 0;
         dialogueBoxTextMesh.transform.parent.gameObject.SetActive(true);
         dialogueBoxTextMesh.text = GetDialogueLineByID(id);
         dialogueBoxButton.onClick.RemoveAllListeners();

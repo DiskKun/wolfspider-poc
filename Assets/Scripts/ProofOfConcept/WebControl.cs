@@ -178,7 +178,7 @@ public class WebControl : MonoBehaviour
 
         float t = 0;
         Vector3 startPos = animObj.transform.position;
-        while (animObj.transform.position != silkText.transform.parent.position)
+        while (t < 1)
         {
             animObj.transform.position = Vector3.Lerp(startPos, silkText.transform.parent.position, silkAnimationCurve.Evaluate(t));
             t += Time.deltaTime;
