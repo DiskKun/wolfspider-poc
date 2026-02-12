@@ -61,10 +61,12 @@ public class DialogueManager : MonoBehaviour
         if (id == "END")
         {
             Time.timeScale = 1;
+            Cursor.visible = false;
             dialogueBoxTextMesh.transform.parent.gameObject.SetActive(false);
             return;
         }
         Time.timeScale = 0;
+        Cursor.visible = true;
         dialogueBoxTextMesh.transform.parent.gameObject.SetActive(true);
         dialogueBoxTextMesh.text = GetDialogueLineByID(id);
         dialogueBoxButton.onClick.RemoveAllListeners();
