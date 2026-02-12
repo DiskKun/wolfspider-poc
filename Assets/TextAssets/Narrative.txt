@@ -1,14 +1,12 @@
 Dialogue ID	Dialogue	Go To
-F01	"Oh thank god, you are awake! The big one doesn't like us bugs... you should be more careful."	F02
-F02	"Looking for your baby? Relax, I think I saw one landing in this room."	F03
-F03	"I can guide you, follow me!"	END
-P01	Mom! You found me! I was hiding here because there were so many termites.	F04
-F04	Yes..! They are such a big problem to us. Absolutely OUT OF CONTROL. They even ate my garden table last time.	F05
-F05	Even the big one is noticing and trying to get rid of every one of us in the house...	P02
-P02	But we just moved here...	F06
-F06	Well I'm glad your family is here so you can help me to get rid of them 	P03
-P03	Right... right! Mom we have to go! I heard they took a spider to the queen from the termites! 	F07
-F07	The queen should be in the living room. Let's go. 	END
-F08	You'll have to use your web to get up here!	F09
-F09	Click when your web icon is white to spin a bridge of silk.	F10
-F10	"If you don't have silk, eat some termites!"	END
+G01	Thank Hercules Beetle! You're awake!	G02
+G02	The Big One is getting home soon...	G03
+G03	We gotta move! Follow me!	END
+G04	These termites are destroying the home…	G05
+G05	"Press space to eat them up, then use your web bridge to follow me!"	END
+G06	"I think I saw your baby girl way up high… Gwen, right? What's she doing up there?"	G07
+G07	We better go get her before Big One sees her.	END
+G08	"I can fly across this gap, but it looks too big for you to spin a bridge across."	G09
+G09	Maybe you can pull one of the Big One's boxes with that strong web of yours?	END
+G10	You did it!! Gwen is just ahead.	G11
+G11	Press space to let her ride on your back!	END
