@@ -159,7 +159,13 @@ public class WebControl : MonoBehaviour
 
     IEnumerator SpinWebBridge(int stepsToTake, float timeToSpin)
     {
-        Vector3 webDistance = (camToWebHit.point - player.transform.position); // distance between the player and the webicon at time of spin
+        // get the TOP of the gameobject
+
+        Vector3 bridgePoint = camToWebHit.point;
+        bridgePoint.y = camToWebHit.transform.position.y + camToWebHit.transform.localScale.y / 2;
+
+
+        Vector3 webDistance = ((bridgePoint) - player.transform.position); // distance between the player and the webicon at time of spin
         Mesh mesh = new Mesh();
 
         int step = 0;
@@ -172,7 +178,7 @@ public class WebControl : MonoBehaviour
             step += 1;
             yield return new WaitForSeconds(timeToSpin / stepsToTake);
         }
-        bridgeRenderer.SetPosition(1, camToWebHit.point);
+        bridgeRenderer.SetPosition(1, bridgePoint);
         bridgeRenderer.BakeMesh(mesh, true);
         bridgeMeshCollider.sharedMesh = mesh; // set the web's mesh collider to the mesh of the linerenderer
     }
