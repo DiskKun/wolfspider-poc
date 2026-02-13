@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ProofOfConcept.unity
     guid: afda1ca3dd54cea4c99e12b9c488d41f
   - enabled: 1
-    path: Assets/Scenes/Grayboxing.unity
+    path: Assets/Scenes/Grayboxing_V2.unity
     guid: 88e11ef910279b24e8b46bfeefd2218a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
