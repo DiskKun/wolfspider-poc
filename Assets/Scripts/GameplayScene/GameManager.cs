@@ -16,13 +16,13 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     [Tooltip("Contains a reference to the Main Menu scene.")]
-    private SceneAsset MainMenuScene;
+    private string MainMenuScene;
 
     [Space(20)]
 
     [SerializeField]
     [Tooltip("Contains a reference to the scene that will be loaded after this level is completed. Ensure that the target scene is included in the build settings scene list!")]
-    private SceneAsset NextScene;
+    private string NextScene;
     private bool loadingNext = false; // whether we're loading the next level yet
 
 
@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
         PauseMenu.SetActive(false);
         SettingsMenu.SetActive(false);
         LoadingScreen.SetActive(true);
-        StartCoroutine(LoadSceneAsync(MainMenuScene.name)); // load main menu
+        StartCoroutine(LoadSceneAsync(MainMenuScene)); // load main menu
     }
 
     IEnumerator LoadSceneAsync(string scenePath)
@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
         SettingsMenu.SetActive(false); // disable all other menus
         LoadingScreen.SetActive(true); // enable loading screen
         Time.timeScale = 0f; // really hacky solution to "disable" player movement and game interactions while loading the next scene. This can be replaced later if need be.
-        LoadSceneAsync(NextScene.name);
+        LoadSceneAsync(NextScene);
     }
 
 }

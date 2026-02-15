@@ -20,7 +20,7 @@ public class MenuButton : MonoBehaviour
     [Space(20)]
 
     [SerializeField]
-    private SceneAsset GameplayScene;
+    private string GameplayScene;
 
 
 
@@ -41,7 +41,7 @@ public class MenuButton : MonoBehaviour
     {
         MainMenu.SetActive(false);
         LoadingScreen.SetActive(true);
-        StartCoroutine(LoadSceneAsync(GameplayScene.name));
+        StartCoroutine(LoadSceneAsync(GameplayScene));
     }
 
     public void SettingsButtonClick()
