@@ -72,6 +72,9 @@ public class PlayerControl : MonoBehaviour
     private float walkSoundTimer = 0f;
 
 
+    private bool walkingOnBridge = false;
+
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -211,6 +214,21 @@ public class PlayerControl : MonoBehaviour
         {
             Gizmos.color = new Color(0,0,1,0.25f); // transparent blue
             Gizmos.DrawSphere(transform.position, enemyDetectionRadius);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bridge")
+        {
+            walkingOnBridge = true;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Bridge")
+        {
+            walkingOnBridge = false;
         }
     }
 }

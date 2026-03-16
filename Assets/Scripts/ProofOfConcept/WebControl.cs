@@ -212,11 +212,12 @@ public class WebControl : MonoBehaviour
             step++;
             yield return new WaitForSeconds(timeToSpin / stepsToTake);
         }
-        bridgeRenderer.alignment = LineAlignment.View;
+        bridgeRenderer.alignment = LineAlignment.View; // temporarily set the linealignment to view for the purposes of meshbaking
         bridgeRenderer.SetPosition(1, bridgePoint);
         bridgeRenderer.BakeMesh(mesh, true);
         bridgeMeshCollider.sharedMesh = mesh; // set the web's mesh collider to the mesh of the linerenderer
-        bridgeRenderer.alignment = LineAlignment.TransformZ;
+        bridgeRenderer.alignment = LineAlignment.TransformZ; // set the alignment back to transformz so that the line appears static and doesn't rotate with the camera angle
+
     }
 
     IEnumerator SpinWebRope(int stepsToTake, float timeToSpin)
