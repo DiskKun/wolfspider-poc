@@ -8,6 +8,7 @@ TagManager:
   - Baby
   - Carried
   - NPC
+  - Bridge
   layers:
   - Default
   - TransparentFX

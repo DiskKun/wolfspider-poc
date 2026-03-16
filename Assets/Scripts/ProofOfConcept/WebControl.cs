@@ -209,12 +209,14 @@ public class WebControl : MonoBehaviour
             bridgeRenderer.SetPosition(1, player.transform.position + webDistance * step / stepsToTake);
             bridgeRenderer.BakeMesh(mesh, true);
             bridgeMeshCollider.sharedMesh = mesh;
-            step += 1;
+            step++;
             yield return new WaitForSeconds(timeToSpin / stepsToTake);
         }
+        bridgeRenderer.alignment = LineAlignment.View;
         bridgeRenderer.SetPosition(1, bridgePoint);
         bridgeRenderer.BakeMesh(mesh, true);
         bridgeMeshCollider.sharedMesh = mesh; // set the web's mesh collider to the mesh of the linerenderer
+        bridgeRenderer.alignment = LineAlignment.TransformZ;
     }
 
     IEnumerator SpinWebRope(int stepsToTake, float timeToSpin)
@@ -226,7 +228,7 @@ public class WebControl : MonoBehaviour
         {
             // incrementally increase the size of the web towards the target
             ropeRenderer.SetPosition(1, player.transform.position + webDistance * step / stepsToTake);
-            step += 1;
+            step++;
             yield return new WaitForSeconds(timeToSpin / stepsToTake);
         }
         ropeRenderer.SetPosition(1, camToWebHit.point);
