@@ -28,6 +28,7 @@ public class NPC_Guide : NPC_Base
     private Transform[] guideNodes;
     private int nodeID;
     private Vector3 target;
+    private bool reachedCurrentTarget = false;
 
     private float targetAcceptanceRange = 0.5f; // constant value that provides a bit of leeway for how far away the pest can be from its target and still count it as "reached"
 
@@ -59,6 +60,10 @@ public class NPC_Guide : NPC_Base
             Vector3 moveDir = new Vector3(target.x - transform.position.x, target.y - transform.position.y, target.z - transform.position.z).normalized; // get direction of movement
             moveDir *= speed; moveDir *= Time.deltaTime;
             transform.position = new Vector3(transform.position.x + moveDir.x, transform.position.y + moveDir.y, transform.position.z + moveDir.z); // move guide
+            reachedCurrentTarget = false;
+        } else
+        {
+            reachedCurrentTarget = true;
         }
 
     }
@@ -66,8 +71,11 @@ public class NPC_Guide : NPC_Base
     protected override void OnInteract()
     {
         // interaction code here
-        dm.ShowDialogue(dialogueIDSequence[nodeID]);
-        NextNode();
+        if (Time.timeScale > 0f && reachedCurrentTarget)
+        {
+            dm.ShowDialogue(dialogueIDSequence[nodeID]);
+            NextNode();
+        }
     }
 
     public void NextNode()
