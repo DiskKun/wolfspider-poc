@@ -15,14 +15,19 @@ public class MenuButton : MonoBehaviour
     private GameObject SplashScreen;
     [SerializeField]
     [Tooltip("Time in seconds for the splash screen to stay on-screen when the project loads.")]
-    private float splashScreenTimer;
+    private float splashScreenTime;
+    private float splashScreenTimer; // the actual timer
 
     [Space(20)]
 
     [SerializeField]
     private string GameplayScene;
 
-
+    private void Start()
+    {
+        splashScreenTimer = splashScreenTimer;
+        Time.timeScale = 1f; // reset timescale
+    }
 
     void Update()
     {
