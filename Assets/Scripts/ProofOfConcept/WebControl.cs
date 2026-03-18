@@ -16,6 +16,8 @@ public class WebControl : MonoBehaviour
 
     [Tooltip("The amount of web silk the player currently has")]
     public int webSilkAmount = 0;
+    [Tooltip("The amount of web silk the player can store at most")]
+    public int webSilkMax = 3;
 
     //public Material webIconMaterial;
     //public Material pullTextMaterial;
@@ -185,7 +187,7 @@ public class WebControl : MonoBehaviour
             yield return null;
         }
         Destroy(animObj);
-        webSilkAmount += amount;
+        webSilkAmount = Mathf.Min(webSilkAmount + amount, webSilkMax); // sets to the lower value. If amount goes over max, it automatically caps.
     }
 
 
