@@ -40,22 +40,30 @@ public class PlayerControl : MonoBehaviour
     public float pCDTimer = 0; // internal cooldown timer
     [Tooltip("Amount of time after pouncing that movement keys have no effect. Clamped to Pounce Cooldown.")]
     public float pounceDuration = 0.1f; // time in seconds for the pounce to lock you out of movement, no greater than pounceCooldown
+    [Tooltip("How far away from the mouse we should stop pouncing from.")]
+    public float pounceMouseYield = 0.1f; // distance from the mouse that the pounce should be canceled from
 
     private Vector2 pInput; // player movement input
     private bool pounceInput; // pounce input 
+    private Vector3 pounceEndpoint;
 
     private Vector3 vel; // velocity for use with movement
     private float minVelToTurn = 0.2f;
 
     [Space(20)]
 
-    [Tooltip("How far away (in units) to detect enemies from, for pounce purposes.")]
-    public float enemyDetectionRadius;
-    [SerializeField]
+    [Tooltip("How far away (in units) the player's mouse can be from an NPC to be counted as \"hovered.\"")]
+    public float NPCHoverDist;
+
+    [Tooltip("How far away (in units) to detect entities from, for interaction purposes.")]
+    public float entityDetectionRadius;
+    //[SerializeField]
     private bool turnTowardsEnemies; // enable and disable this feature
 
     private Vector3 targetPos; // enemy/NPC to target
     private GameObject targetObject; // GameObject belonging to the target
+
+    private Transform webIconTransform;
 
     private AudioSource audioSource; //audio source to play SFX
     [Space(40)]
@@ -80,6 +88,7 @@ public class PlayerControl : MonoBehaviour
         vel = new Vector3(); // reset velocity
         pounceDuration = Mathf.Clamp(pounceDuration, 0f, pounceCooldown); // clamp pounce duration so that it's not longer than cooldown to prevent weirdness from the implementation
         pCDTimer = 0; // reset cooldown
+        webIconTransform = GameObject.Find("WebIcon").GetComponent<Transform>(); // using find here because I'm lazy and it shouldn't be a performance hit at this small of a scale
 
         audioSource = GetComponent<AudioSource>();
 
@@ -111,14 +120,23 @@ public class PlayerControl : MonoBehaviour
             walkSoundTimer = 0; // reset footstep timer to queue up a walk SFX as soon as the player starts moving again
         }
         
-        if (Input.GetButtonDown("Jump")) // queue up a pounce in Update to ensure responsiveness
+        if (Input.GetMouseButtonDown(0)) // queue up a pounce in Update to ensure responsiveness
         {
-            if (detectEnemies() == "NPC")
+            var entityHit = detectEntities();
+            var dist = new Vector3();
+            if (entityHit != null)
+            {
+                dist = webIconTransform.position - targetObject.GetComponent<Transform>().position;
+                dist.y = 0;
+            }
+
+            if (entityHit == "NPC" && Vector3.Magnitude(dist) <= NPCHoverDist)
             {
                 targetObject.GetComponent<NPC_Base>().NPC_Interaction.Invoke(); // call the interaction function
+                
             } else if (pCDTimer <= 0)
             {
-                pounceInput = true; pCDTimer = pounceCooldown;
+                pounceInput = true; pCDTimer = pounceCooldown; pounceEndpoint = webIconTransform.position;
             }
             
         }
@@ -132,7 +150,7 @@ public class PlayerControl : MonoBehaviour
 
         vel += Vector3.Normalize(new Vector3(pInput.x, 0, pInput.y)) * speed * sprintInput * Time.deltaTime; // adjust player velocity, normalize increase to ensure consistency
         vel += new Vector3(0, -gravity, 0) * Time.deltaTime; // apply gravity
-        if (new Vector3(vel.x, 0, vel.y).magnitude > minVelToTurn) // as long as the player is moving more than a certain amount...
+        /*if (new Vector3(vel.x, 0, vel.y).magnitude > minVelToTurn) // as long as the player is moving more than a certain amount...
         {
             // rotate the transform based on velocity
             transform.eulerAngles = new Vector3(0, -(Mathf.Atan2(vel.z, vel.x) * Mathf.Rad2Deg + 90), 0); //rotate to proper angle
@@ -142,7 +160,10 @@ public class PlayerControl : MonoBehaviour
         {
             // rotate to face nearby enemy
             transform.eulerAngles = new Vector3(0, -(Mathf.Atan2(targetPos.z - transform.position.z, targetPos.x - transform.position.x) * Mathf.Rad2Deg + 90), 0); //rotate to proper angle
-        }
+        }*/
+
+        var mVect = transform.position - webIconTransform.position;
+        transform.eulerAngles = new Vector3(0, -(Mathf.Atan2(mVect.z, mVect.x) * Mathf.Rad2Deg - 90), 0); //rotate to face mouse
 
         if (pounceInput)
         {
@@ -152,17 +173,31 @@ public class PlayerControl : MonoBehaviour
             audioSource.PlayOneShot(pounceSFX, 1f); // play pounce SFX
             pounceInput = false;
         }
-        vel = new Vector3(vel.x * (1-friction), vel.y, vel.z * (1-friction)); //reduce horizontal velocity based on specified friction
+
+
+
+        vel = new Vector3(vel.x * (1 - friction), vel.y, vel.z * (1 - friction)); //reduce horizontal velocity based on specified friction
+        if (pounceCooldown - pCDTimer < pounceDuration)
+        {
+            var dist = new Vector3();
+            dist = transform.position - pounceEndpoint;
+            dist.y = 0;
+            if (Vector3.Magnitude(dist) <= pounceMouseYield)
+            {
+                vel = new Vector3(vel.x * (0.5f), vel.y, vel.z * (0.5f)); //apply strong friction if pouncing and nearby endpoint so as not to overshoot
+            }
+            
+        }
         rb.linearVelocity = vel; //update player velocity
 
     }
 
-    private string detectEnemies()
+    private string detectEntities()
     {
         Vector3 pos = transform.position;
 
-        Collider[] hits = Physics.OverlapSphere(pos, enemyDetectionRadius); // run a spherecast;
-        string hitPest = "none";
+        Collider[] hits = Physics.OverlapSphere(pos, entityDetectionRadius); // run a spherecast;
+        string hitPest = null;
 
         if (hits.Length > 0) // if we've hit something
         {
@@ -210,7 +245,7 @@ public class PlayerControl : MonoBehaviour
         if (turnTowardsEnemies)
         {
             Gizmos.color = new Color(0,0,1,0.25f); // transparent blue
-            Gizmos.DrawSphere(transform.position, enemyDetectionRadius);
+            Gizmos.DrawSphere(transform.position, entityDetectionRadius);
         }
     }
 }

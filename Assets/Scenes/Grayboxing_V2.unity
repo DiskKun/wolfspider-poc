@@ -6040,12 +6040,13 @@ MonoBehaviour:
   friction: 0.15
   gravity: 10
   sprintMultiplier: 2
-  pounceStrength: 1500
+  pounceStrength: 3000
   pounceJumpStrength: 2
   pounceCooldown: 0.75
   pounceDuration: 0.5
-  enemyDetectionRadius: 5
-  turnTowardsEnemies: 1
+  pounceMouseYield: 0.5
+  NPCHoverDist: 1
+  entityDetectionRadius: 5
   SFX_Pounce: {fileID: 11400000, guid: 91cf78d6fd5a99340bc27ab1c91f2d7e, type: 2}
   SFX_Eat: {fileID: 11400000, guid: f9d0fc661950ee645879570fbdf607f2, type: 2}
   SFX_Walk: {fileID: 11400000, guid: f11c3499572d95a41ae8b712dccc832c, type: 2}
