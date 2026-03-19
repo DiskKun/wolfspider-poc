@@ -124,7 +124,7 @@ public class PlayerControl : MonoBehaviour
         {
             var entityHit = detectEntities();
             var dist = new Vector3();
-            if (entityHit != null)
+            if (entityHit == "NPC")
             {
                 dist = webIconTransform.position - targetObject.GetComponent<Transform>().position;
                 dist.y = 0;
