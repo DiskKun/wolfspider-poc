@@ -4,13 +4,20 @@ using System.Collections;
 using System;
 using TMPro;
 using UnityEngine.UI;
+
+using Unity.Cinemachine;
+
 public class DialogueManager : MonoBehaviour
 {
+    public PlayerControl player;
     public TextAsset dialogueTextFile;
     public TextMeshProUGUI dialogueBoxTextMesh;
     public Button dialogueBoxButton;
-
+    public CinemachineCamera[]  cameras;
+    
     string[][] DialogueText = new string[][] {};
+    
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -56,16 +63,38 @@ public class DialogueManager : MonoBehaviour
         return id + "ERR: DIALOGUE ID NOT FOUND";
     }
 
+    int GetCameraByDialogueID(string id)
+    {
+        foreach (string[] s in DialogueText)
+        {
+            if (s[0] == id)
+            {
+                Debug.Log("found camera: " + int.Parse(s[3]));
+                return int.Parse(s[3]);
+                
+            }
+        }
+
+        return 0;
+    }
+
     public void ShowDialogue(string id)
     {
         if (id == "END")
         {
-            Time.timeScale = 1;
+            player.movementPaused = false;
             Cursor.visible = false;
             dialogueBoxTextMesh.transform.parent.gameObject.SetActive(false);
             return;
         }
-        Time.timeScale = 0;
+
+        foreach (CinemachineCamera cam in cameras)
+        {
+            cam.enabled = false;
+        }
+        cameras[GetCameraByDialogueID(id)].enabled = true;
+        
+        player.movementPaused = true;
         Cursor.visible = true;
         dialogueBoxTextMesh.transform.parent.gameObject.SetActive(true);
         dialogueBoxTextMesh.text = GetDialogueLineByID(id);

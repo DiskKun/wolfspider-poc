@@ -6,6 +6,7 @@ public class WebControl : MonoBehaviour
 {
     [Tooltip("Sets whether or not the hardware cursor is visible. You will need to restart the scene to see this change.")]
     public bool cursorVisible;
+
     public PlayerControl player;
     [Tooltip("The GameObject that contains the LineRenderer and MeshCollider components for the web bridges")]
     public GameObject bridgeGameObject;
@@ -99,6 +100,16 @@ public class WebControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player.movementPaused)
+        {
+            meshRenderer.enabled = false;
+            return;
+        }
+        else
+        {
+            meshRenderer.enabled = true;
+        }
+        
         CastWebIconRays();
 
         if (Input.GetMouseButtonDown(0))

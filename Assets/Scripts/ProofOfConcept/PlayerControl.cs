@@ -78,6 +78,8 @@ public class PlayerControl : MonoBehaviour
     private AudioClip walkSFX;
     private float walkRepeatDelay = 0.1f; // delay between footstep sounds
     private float walkSoundTimer = 0f;
+    
+    public bool movementPaused = false;
 
 
 
@@ -100,6 +102,8 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (movementPaused) { return; }
+        
         if (pCDTimer > 0) { pCDTimer -= Time.deltaTime; } // reduce cooldown timer
 
         if (pounceCooldown - pCDTimer >= pounceDuration) {
