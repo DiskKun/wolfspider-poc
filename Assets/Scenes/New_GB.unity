@@ -2915,18 +2915,12 @@ MonoBehaviour:
   dm: {fileID: 970377351}
   dialogueIDSequence:
   - G01
+  - G12
   - G04
   - G06
   - G08
   - G10
   - END
-  - END
-  - END
-  - END
-  - END
-  - END
-  - END
-  - F04
   requireInteract: 1
   detectionRadius: 3
   speed: 5
