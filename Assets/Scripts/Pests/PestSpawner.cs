@@ -23,6 +23,7 @@ public class PestSpawner : MonoBehaviour
 
     private GameObject[] pestPool;
     private float spawnTimer;
+    private WebControl wc;
 
     private void OnDrawGizmos()
     {
@@ -49,6 +50,7 @@ public class PestSpawner : MonoBehaviour
 
         }
         spawnTimer = spawnDelay;
+        wc = GameObject.Find("WebIcon").GetComponent<WebControl>(); // assign this to make sure we don't spawn anything once the silk cap is reached
     }
 
     // Update is called once per frame
@@ -58,7 +60,7 @@ public class PestSpawner : MonoBehaviour
         if (spawnTimer <= 0)
         {
             int freePest = checkActivePests();
-            if (freePest >= 0) //check to see if a pooled pest is not currently in use
+            if (freePest >= 0 && wc.webSilkAmount < wc.webSilkMax) //check to see if a pooled pest is not currently in use AND we're under max silk amount
             {
                 pestPool[freePest].transform.position = transform.position; // set the pest to the spawner's position
                 pestPool[freePest].transform.rotation = Quaternion.identity; // reset rotation

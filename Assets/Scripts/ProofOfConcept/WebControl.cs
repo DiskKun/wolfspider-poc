@@ -6,6 +6,7 @@ public class WebControl : MonoBehaviour
 {
     [Tooltip("Sets whether or not the hardware cursor is visible. You will need to restart the scene to see this change.")]
     public bool cursorVisible;
+
     public PlayerControl player;
     [Tooltip("The GameObject that contains the LineRenderer and MeshCollider components for the web bridges")]
     public GameObject bridgeGameObject;
@@ -16,6 +17,8 @@ public class WebControl : MonoBehaviour
 
     [Tooltip("The amount of web silk the player currently has")]
     public int webSilkAmount = 0;
+    [Tooltip("The amount of web silk the player can store at most")]
+    public int webSilkMax = 3;
 
     //public Material webIconMaterial;
     //public Material pullTextMaterial;
@@ -97,6 +100,16 @@ public class WebControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player.movementPaused)
+        {
+            meshRenderer.enabled = false;
+            return;
+        }
+        else
+        {
+            meshRenderer.enabled = true;
+        }
+        
         CastWebIconRays();
 
         if (Input.GetMouseButtonDown(0))
@@ -185,7 +198,7 @@ public class WebControl : MonoBehaviour
             yield return null;
         }
         Destroy(animObj);
-        webSilkAmount += amount;
+        webSilkAmount = Mathf.Min(webSilkAmount + amount, webSilkMax); // sets to the lower value. If amount goes over max, it automatically caps.
     }
 
 
