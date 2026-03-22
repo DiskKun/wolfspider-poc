@@ -81,6 +81,9 @@ public class PlayerControl : MonoBehaviour
     
     public bool movementPaused = false;
 
+    public Vector3[] spawnPoints; // where to spawn for each level
+    private int level;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -97,12 +100,14 @@ public class PlayerControl : MonoBehaviour
         pounceSFX = SFX_Pounce.pounceSFX; // load audio hooks
         eatSFX = SFX_Eat.eatSFX;
         walkSFX = SFX_Walk.walkSFX;
+
+        level = 0; // reset level
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (movementPaused) { return; }
+        if (movementPaused) { rb.linearVelocity = new Vector3(); return; }
         
         if (pCDTimer > 0) { pCDTimer -= Time.deltaTime; } // reduce cooldown timer
 
@@ -140,7 +145,12 @@ public class PlayerControl : MonoBehaviour
                 
             } else if (pCDTimer <= 0)
             {
-                pounceInput = true; pCDTimer = pounceCooldown; pounceEndpoint = webIconTransform.position;
+                WebControl wc = webIconTransform.gameObject.GetComponent<WebControl>();
+                if (!wc.canPull && !wc.canBridge && !wc.pulling)
+                {
+                    pounceInput = true; pCDTimer = pounceCooldown; pounceEndpoint = webIconTransform.position;
+                }
+                
             }
             
         }
@@ -149,6 +159,8 @@ public class PlayerControl : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (movementPaused) { rb.linearVelocity = new Vector3(); return; }
+
         RaycastHit rh;
         if ( Physics.SphereCast(transform.position, 0.25f, Vector3.down, out rh, 0.27f) ) { vel.y = 0; }
 
@@ -251,5 +263,15 @@ public class PlayerControl : MonoBehaviour
             Gizmos.color = new Color(0,0,1,0.25f); // transparent blue
             Gizmos.DrawSphere(transform.position, entityDetectionRadius);
         }
+    }
+
+    public void teleportToNextLevel()
+    {
+        level++;
+        if (level < spawnPoints.Length)
+        {
+            transform.position = spawnPoints[level];
+        }
+        
     }
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using System;
 
 public class WebControl : MonoBehaviour
 {
@@ -60,9 +61,10 @@ public class WebControl : MonoBehaviour
     private float pullSoundTimer = 0f;
 
 
-
-    bool canBridge = false;
-    bool canPull = false;
+    [NonSerialized]
+    public bool canBridge = false;
+    [NonSerialized]
+    public bool canPull = false;
 
     Rigidbody rb;
     MeshRenderer meshRenderer;
@@ -72,7 +74,8 @@ public class WebControl : MonoBehaviour
 
     LineRenderer ropeRenderer;
 
-    Rigidbody pulling; // the object the player is pulling
+    [NonSerialized]
+    public Rigidbody pulling; // the object the player is pulling
     Transform pullPoint;
 
     RaycastHit camToWebHit; // contains the raycasthit data for the raycast between the camera and the webicon; used for placing the webicon
