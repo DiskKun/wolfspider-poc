@@ -158,7 +158,7 @@ MonoBehaviour:
   LoadingScreen: {fileID: 474159805}
   SplashScreen: {fileID: 6283288453795987511}
   splashScreenTime: 2
-  GameplayScene: Assets/Scenes/Grayboxing_V2.unity
+  GameplayScene: Scenes/Static/Intro
 --- !u!4 &555095726
 Transform:
   m_ObjectHideFlags: 0
