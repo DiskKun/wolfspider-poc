@@ -1,0 +1,1989 @@
+fileFormatVersion: 2
+guid: ba1c0353cb6fc4d4dbde117462215704
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4295920679824214083
+    second: control-V2_0
+  - first:
+      213: -618762319623073214
+    second: control-V2_1
+  - first:
+      213: -3574057603818647338
+    second: control-V2_2
+  - first:
+      213: 1986782664686990050
+    second: control-V2_3
+  - first:
+      213: -4316967363956339297
+    second: control-V2_4
+  - first:
+      213: -4903244910656368993
+    second: control-V2_5
+  - first:
+      213: 5411486891973210145
+    second: control-V2_6
+  - first:
+      213: -164512053105315220
+    second: control-V2_7
+  - first:
+      213: -8276959939036499281
+    second: control-V2_8
+  - first:
+      213: 280348750659337463
+    second: control-V2_9
+  - first:
+      213: 5627971250832973107
+    second: control-V2_10
+  - first:
+      213: 7969287123913968896
+    second: control-V2_11
+  - first:
+      213: 5657896120402427777
+    second: control-V2_12
+  - first:
+      213: 7744936281632010827
+    second: control-V2_13
+  - first:
+      213: 7190773328381296381
+    second: control-V2_14
+  - first:
+      213: 4877608105810839744
+    second: control-V2_15
+  - first:
+      213: -8825488842446731115
+    second: control-V2_16
+  - first:
+      213: -8839490622422932416
+    second: control-V2_17
+  - first:
+      213: -6491383183938317487
+    second: control-V2_18
+  - first:
+      213: -1252664112307351942
+    second: control-V2_19
+  - first:
+      213: 7235165253112943412
+    second: control-V2_20
+  - first:
+      213: 5667692227753111974
+    second: control-V2_21
+  - first:
+      213: 419388622280209240
+    second: control-V2_22
+  - first:
+      213: -5872937255515742143
+    second: control-V2_23
+  - first:
+      213: -5285175333577068075
+    second: control-V2_24
+  - first:
+      213: -3524205565687626037
+    second: control-V2_25
+  - first:
+      213: -9012875703576294889
+    second: control-V2_26
+  - first:
+      213: -697761887795868331
+    second: control-V2_27
+  - first:
+      213: -4926087981537095314
+    second: control-V2_28
+  - first:
+      213: 5296128049694822239
+    second: control-V2_29
+  - first:
+      213: -6986549269335914600
+    second: control-V2_30
+  - first:
+      213: -4778465149007515208
+    second: control-V2_31
+  - first:
+      213: 1963279480265179132
+    second: control-V2_32
+  - first:
+      213: -8774370464611301992
+    second: control-V2_33
+  - first:
+      213: -4872080491393963272
+    second: control-V2_34
+  - first:
+      213: -4468374165313481216
+    second: control-V2_35
+  - first:
+      213: -6623133213735116863
+    second: control-V2_36
+  - first:
+      213: 7267311235677684435
+    second: control-V2_37
+  - first:
+      213: -1041791944047096844
+    second: control-V2_38
+  - first:
+      213: -7824950920266392900
+    second: control-V2_39
+  - first:
+      213: 3953802002238156500
+    second: control-V2_40
+  - first:
+      213: -2467757765300173375
+    second: control-V2_41
+  - first:
+      213: -3663089650043804216
+    second: control-V2_42
+  - first:
+      213: -6061590060591687299
+    second: control-V2_43
+  - first:
+      213: -8377964515186414874
+    second: control-V2_44
+  - first:
+      213: 7376779879640630534
+    second: control-V2_45
+  - first:
+      213: 2453795455733236120
+    second: control-V2_46
+  - first:
+      213: 5815780964996641049
+    second: control-V2_47
+  - first:
+      213: -3244304792625356657
+    second: control-V2_48
+  - first:
+      213: 1271973732311928960
+    second: control-V2_49
+  - first:
+      213: 2385312452960436397
+    second: control-V2_50
+  - first:
+      213: 7446386862281364548
+    second: control-V2_51
+  - first:
+      213: -5167237734278434004
+    second: control-V2_52
+  - first:
+      213: -9193044026128886499
+    second: control-V2_53
+  - first:
+      213: 2314610046341957952
+    second: control-V2_54
+  - first:
+      213: -8376269716433761546
+    second: control-V2_55
+  - first:
+      213: 2949932339429613409
+    second: control-V2_56
+  - first:
+      213: 4584137288385055991
+    second: control-V2_57
+  - first:
+      213: -8677514387388700786
+    second: control-V2_58
+  - first:
+      213: -5938479478290038258
+    second: control-V2_59
+  - first:
+      213: -1763180207257971436
+    second: control-V2_60
+  - first:
+      213: 1270808871561607610
+    second: control-V2_61
+  - first:
+      213: -2839144516436322878
+    second: control-V2_62
+  - first:
+      213: 4461357079644888949
+    second: control-V2_63
+  - first:
+      213: 4188458583594552050
+    second: control-V2_64
+  - first:
+      213: 1482927646797946216
+    second: control-V2_65
+  - first:
+      213: -2240250585934082468
+    second: control-V2_66
+  - first:
+      213: -3447916806593125383
+    second: control-V2_67
+  - first:
+      213: -4722926247210873354
+    second: control-V2_68
+  - first:
+      213: -689040568427935701
+    second: control-V2_69
+  - first:
+      213: -2719086531321531617
+    second: control-V2_70
+  - first:
+      213: -3933025548978364317
+    second: control-V2_71
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: control-V2_0
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 1022
+        width: 1684
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db7b2d707e2d164c0800000000000000
+      internalID: -4295920679824214083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_1
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 671
+        width: 232
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 242587ad2f6b967f0800000000000000
+      internalID: -618762319623073214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_2
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 667
+        width: 238
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d01b95ab85666ec0800000000000000
+      internalID: -3574057603818647338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_3
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 604
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e2729e9e48729b10800000000000000
+      internalID: 1986782664686990050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_4
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 597
+        width: 30
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9d8d640e0d0714c0800000000000000
+      internalID: -4316967363956339297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_5
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 604
+        width: 28
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9ec5957bbc24fbb0800000000000000
+      internalID: -4903244910656368993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_6
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 603
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 120febe28a6791b40800000000000000
+      internalID: 5411486891973210145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_7
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 603
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c623369c82987bdf0800000000000000
+      internalID: -164512053105315220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_8
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 604
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa23795e9c4522d80800000000000000
+      internalID: -8276959939036499281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_9
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 603
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fc364014bff3e300800000000000000
+      internalID: 280348750659337463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_10
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 604
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33d920cc8029a1e40800000000000000
+      internalID: 5627971250832973107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_11
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 641
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00d8cf58a68989e60800000000000000
+      internalID: 7969287123913968896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_12
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 603
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18fb5a07b82e48e40800000000000000
+      internalID: 5657896120402427777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_13
+      rect:
+        serializedVersion: 2
+        x: 1460
+        y: 603
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b42f5b2838a8b7b60800000000000000
+      internalID: 7744936281632010827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_14
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 604
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfe358a6e32cac360800000000000000
+      internalID: 7190773328381296381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_15
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 603
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c8cb64cabeb0b340800000000000000
+      internalID: 4877608105810839744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_16
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 603
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5980ac048a0958580800000000000000
+      internalID: -8825488842446731115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_17
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 603
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 044a51fcc12d35580800000000000000
+      internalID: -8839490622422932416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_18
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 604
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15399641369f9e5a0800000000000000
+      internalID: -6491383183938317487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_19
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 603
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7e4a0370a4ad9ee0800000000000000
+      internalID: -1252664112307351942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_20
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 603
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 433db03d678786460800000000000000
+      internalID: 7235165253112943412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_21
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 604
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a1777b6d00b7ae40800000000000000
+      internalID: 5667692227753111974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_22
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 603
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8533adddab7f1d500800000000000000
+      internalID: 419388622280209240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_23
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 604
+        width: 29
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 140a3d8aea22f7ea0800000000000000
+      internalID: -5872937255515742143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_24
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 603
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d17b72490947a6b0800000000000000
+      internalID: -5285175333577068075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_25
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 603
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc60cb5c5b1871fc0800000000000000
+      internalID: -3524205565687626037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_26
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 603
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71a0693cc45dbe280800000000000000
+      internalID: -9012875703576294889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_27
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 604
+        width: 29
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55d0f1c824d0156f0800000000000000
+      internalID: -697761887795868331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_28
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 604
+        width: 28
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e611920941503abb0800000000000000
+      internalID: -4926087981537095314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_29
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 590
+        width: 33
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5fca0fa660af7940800000000000000
+      internalID: 5296128049694822239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_30
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 603
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 897c773b47aca0f90800000000000000
+      internalID: -6986549269335914600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_31
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 603
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b1b2dda34b7fadb0800000000000000
+      internalID: -4778465149007515208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_32
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 603
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfff4001948fe3b10800000000000000
+      internalID: 1963279480265179132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_33
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 193
+        width: 238
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8950a211d8c2b3680800000000000000
+      internalID: -8774370464611301992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_34
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 192
+        width: 238
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fa2a514b94e26cb0800000000000000
+      internalID: -4872080491393963272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_35
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 192
+        width: 238
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00615f00f552df1c0800000000000000
+      internalID: -4468374165313481216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_36
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 117
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cf1a37de67e514a0800000000000000
+      internalID: -6623133213735116863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_37
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 116
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d206c2a01daad460800000000000000
+      internalID: 7267311235677684435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_38
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 117
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fb853d1fbfca81f0800000000000000
+      internalID: -1041791944047096844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_39
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 117
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbad7aca890386390800000000000000
+      internalID: -7824950920266392900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_40
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 117
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4de22af09f9bed630800000000000000
+      internalID: 3953802002238156500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_41
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 116
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c5429f1363c0cdd0800000000000000
+      internalID: -2467757765300173375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_42
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 117
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c5aab40f571a2dc0800000000000000
+      internalID: -3663089650043804216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_43
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 116
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d79d460a4f7e0eba0800000000000000
+      internalID: -6061590060591687299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_44
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 117
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ea6c7b69ad7bbb80800000000000000
+      internalID: -8377964515186414874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_45
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 117
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6058a3877369f5660800000000000000
+      internalID: 7376779879640630534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_46
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 117
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 891827a57f1ad0220800000000000000
+      internalID: 2453795455733236120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_47
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 116
+        width: 35
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9117a1e69fdc5b050800000000000000
+      internalID: 5815780964996641049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_48
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 116
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f80e77ceaf9e9f2d0800000000000000
+      internalID: -3244304792625356657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_49
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 154
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 080941ece55f6a110800000000000000
+      internalID: 1271973732311928960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_50
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 116
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da0c50db9055a1120800000000000000
+      internalID: 2385312452960436397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_51
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 115
+        width: 31
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4449a6a0661e65760800000000000000
+      internalID: 7446386862281364548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_52
+      rect:
+        serializedVersion: 2
+        x: 1446
+        y: 116
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c23f65a68a84a48b0800000000000000
+      internalID: -5167237734278434004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_53
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 116
+        width: 30
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d159f024a2fbb6080800000000000000
+      internalID: -9193044026128886499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_54
+      rect:
+        serializedVersion: 2
+        x: 1589
+        y: 116
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04943c5e2952f1020800000000000000
+      internalID: 2314610046341957952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_55
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 116
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fa8a11821381cb80800000000000000
+      internalID: -8376269716433761546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_56
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 116
+        width: 36
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16f932355d340f820800000000000000
+      internalID: 2949932339429613409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_57
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 115
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fc40d373902e9f30800000000000000
+      internalID: 4584137288385055991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_58
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 116
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e87ea5ed3a6439780800000000000000
+      internalID: -8677514387388700786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_59
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 116
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e02439eb068469da0800000000000000
+      internalID: -5938479478290038258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_60
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 116
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 415936771fce787e0800000000000000
+      internalID: -1763180207257971436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_61
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 116
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab938d68fe1d2a110800000000000000
+      internalID: 1270808871561607610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_62
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 116
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c590dfca155998d0800000000000000
+      internalID: -2839144516436322878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_63
+      rect:
+        serializedVersion: 2
+        x: 997
+        y: 103
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57f586c60ace9ed30800000000000000
+      internalID: 4461357079644888949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_64
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 116
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fac69fe3e4602a30800000000000000
+      internalID: 4188458583594552050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_65
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 116
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86d5ffe76da649410800000000000000
+      internalID: 1482927646797946216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_66
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 115
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5ec98126f709e0e0800000000000000
+      internalID: -2240250585934082468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_67
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 116
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f3eae7aee98620d0800000000000000
+      internalID: -3447916806593125383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_68
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 115
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fd80aee99bc47eb0800000000000000
+      internalID: -4722926247210873354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_69
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 115
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b280503f0490076f0800000000000000
+      internalID: -689040568427935701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_70
+      rect:
+        serializedVersion: 2
+        x: 1553
+        y: 115
+        width: 28
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f13f703c43dd34ad0800000000000000
+      internalID: -2719086531321531617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: control-V2_71
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 115
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 360eb9ce9161b69c0800000000000000
+      internalID: -3933025548978364317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      control-V2_0: -4295920679824214083
+      control-V2_1: -618762319623073214
+      control-V2_10: 5627971250832973107
+      control-V2_11: 7969287123913968896
+      control-V2_12: 5657896120402427777
+      control-V2_13: 7744936281632010827
+      control-V2_14: 7190773328381296381
+      control-V2_15: 4877608105810839744
+      control-V2_16: -8825488842446731115
+      control-V2_17: -8839490622422932416
+      control-V2_18: -6491383183938317487
+      control-V2_19: -1252664112307351942
+      control-V2_2: -3574057603818647338
+      control-V2_20: 7235165253112943412
+      control-V2_21: 5667692227753111974
+      control-V2_22: 419388622280209240
+      control-V2_23: -5872937255515742143
+      control-V2_24: -5285175333577068075
+      control-V2_25: -3524205565687626037
+      control-V2_26: -9012875703576294889
+      control-V2_27: -697761887795868331
+      control-V2_28: -4926087981537095314
+      control-V2_29: 5296128049694822239
+      control-V2_3: 1986782664686990050
+      control-V2_30: -6986549269335914600
+      control-V2_31: -4778465149007515208
+      control-V2_32: 1963279480265179132
+      control-V2_33: -8774370464611301992
+      control-V2_34: -4872080491393963272
+      control-V2_35: -4468374165313481216
+      control-V2_36: -6623133213735116863
+      control-V2_37: 7267311235677684435
+      control-V2_38: -1041791944047096844
+      control-V2_39: -7824950920266392900
+      control-V2_4: -4316967363956339297
+      control-V2_40: 3953802002238156500
+      control-V2_41: -2467757765300173375
+      control-V2_42: -3663089650043804216
+      control-V2_43: -6061590060591687299
+      control-V2_44: -8377964515186414874
+      control-V2_45: 7376779879640630534
+      control-V2_46: 2453795455733236120
+      control-V2_47: 5815780964996641049
+      control-V2_48: -3244304792625356657
+      control-V2_49: 1271973732311928960
+      control-V2_5: -4903244910656368993
+      control-V2_50: 2385312452960436397
+      control-V2_51: 7446386862281364548
+      control-V2_52: -5167237734278434004
+      control-V2_53: -9193044026128886499
+      control-V2_54: 2314610046341957952
+      control-V2_55: -8376269716433761546
+      control-V2_56: 2949932339429613409
+      control-V2_57: 4584137288385055991
+      control-V2_58: -8677514387388700786
+      control-V2_59: -5938479478290038258
+      control-V2_6: 5411486891973210145
+      control-V2_60: -1763180207257971436
+      control-V2_61: 1270808871561607610
+      control-V2_62: -2839144516436322878
+      control-V2_63: 4461357079644888949
+      control-V2_64: 4188458583594552050
+      control-V2_65: 1482927646797946216
+      control-V2_66: -2240250585934082468
+      control-V2_67: -3447916806593125383
+      control-V2_68: -4722926247210873354
+      control-V2_69: -689040568427935701
+      control-V2_7: -164512053105315220
+      control-V2_70: -2719086531321531617
+      control-V2_71: -3933025548978364317
+      control-V2_8: -8276959939036499281
+      control-V2_9: 280348750659337463
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
