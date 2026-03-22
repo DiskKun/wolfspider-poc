@@ -26,6 +26,7 @@ public class Baby : MonoBehaviour
             transform.parent = other.gameObject.transform; // literally child this to the parent
             transform.localPosition = new Vector3(carryOffset.x, 0.5f, carryOffset.y); // set local position to be appropriately placed on the parent's back
             gameObject.tag = "Carried"; // update tag so player doesn't constantly point at the baby on its back
+            other.gameObject.GetComponent<PlayerControl>().teleportToNextLevel(); // teleport player
         }
     }
 }

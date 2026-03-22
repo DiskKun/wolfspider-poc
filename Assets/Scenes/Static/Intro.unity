@@ -589,7 +589,7 @@ MonoBehaviour:
   - {fileID: 238161599}
   - {fileID: 1110291101}
   - {fileID: 1713618767}
-  fadeDuration: 1
+  fadeDuration: 2
 --- !u!1 &698617405
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,7 +1165,7 @@ MonoBehaviour:
   - {fileID: 1125168681}
   - {fileID: 1805591771}
   - {fileID: 698617407}
-  fadeDuration: 1
+  fadeDuration: 2
 --- !u!1 &993256249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,7 +1841,7 @@ MonoBehaviour:
   - {fileID: 722413412}
   - {fileID: 1653107233}
   - {fileID: 1085825149}
-  fadeDuration: 1
+  fadeDuration: 2
 --- !u!1 &1653107231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,7 +2040,7 @@ MonoBehaviour:
   - {fileID: 1029923768}
   - {fileID: 198115086}
   - {fileID: 1495852926}
-  fadeDuration: 1
+  fadeDuration: 2
 --- !u!1 &1711110111
 GameObject:
   m_ObjectHideFlags: 0
