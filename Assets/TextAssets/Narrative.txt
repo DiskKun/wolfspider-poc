@@ -9,7 +9,7 @@ G07	We better go get her before Big One sees her.	END	0
 G08	"I can fly across this gap, but it looks too big for you to spin a bridge across."	G09	4
 G09	Maybe you can pull one of the Big One's boxes with that strong web of yours?	END	0
 G10	You did it!! Gwen is just ahead.	G11	4
-G11	Press space to let her ride on your back!	END	4
+G11	Click her to let her ride on your back!	END	0
 G12	You can pull some items with your web rope...	G13	4
 G13	"Click to spin the rope, click again to pull towards you, and right click to disengage."	END	0
 G20	Didja see those termites on the other side of the couch?	G21	2
