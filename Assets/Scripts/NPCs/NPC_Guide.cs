@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class NPC_Guide : NPC_Base
 {
+    public PlayerControl player;
+    
     [Tooltip("Reference to the dialogue manager gameobject")]
     public DialogueManager dm;
 
@@ -32,6 +34,7 @@ public class NPC_Guide : NPC_Base
 
     private float targetAcceptanceRange = 0.5f; // constant value that provides a bit of leeway for how far away the pest can be from its target and still count it as "reached"
 
+    private bool queueNextNode = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     protected override void Start()
@@ -46,6 +49,11 @@ public class NPC_Guide : NPC_Base
     // Update is called once per frame
     void Update() // no need to override since the parent class has no update function
     {
+        if (queueNextNode && !player.movementPaused)
+        {
+            NextNode();
+            queueNextNode = false;
+        }
         if (!requireInteract && Vector3.Distance(transform.position, target) <= targetAcceptanceRange) // if it's reached its target, is within detection range of the player, and doesn't require an interaction to move on
         {
             if (nodeID < guideNodes.Length && detectPlayer()) // if the guide hasn't reached the end of the path, move to the next node
@@ -71,10 +79,10 @@ public class NPC_Guide : NPC_Base
     protected override void OnInteract()
     {
         // interaction code here
-        if (Time.timeScale > 0f && reachedCurrentTarget)
+        if (!player.movementPaused && reachedCurrentTarget)
         {
             dm.ShowDialogue(dialogueIDSequence[nodeID]);
-            NextNode();
+            queueNextNode = true;
         }
     }
 

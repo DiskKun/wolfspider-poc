@@ -25,7 +25,7 @@ public class MenuButton : MonoBehaviour
 
     private void Start()
     {
-        splashScreenTimer = splashScreenTimer;
+        splashScreenTimer = splashScreenTime;
         Time.timeScale = 1f; // reset timescale
     }
 

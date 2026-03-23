@@ -1,11 +1,13 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using System;
 
 public class WebControl : MonoBehaviour
 {
     [Tooltip("Sets whether or not the hardware cursor is visible. You will need to restart the scene to see this change.")]
     public bool cursorVisible;
+
     public PlayerControl player;
     [Tooltip("The GameObject that contains the LineRenderer and MeshCollider components for the web bridges")]
     public GameObject bridgeGameObject;
@@ -59,9 +61,10 @@ public class WebControl : MonoBehaviour
     private float pullSoundTimer = 0f;
 
 
-
-    bool canBridge = false;
-    bool canPull = false;
+    [NonSerialized]
+    public bool canBridge = false;
+    [NonSerialized]
+    public bool canPull = false;
 
     Rigidbody rb;
     MeshRenderer meshRenderer;
@@ -71,7 +74,8 @@ public class WebControl : MonoBehaviour
 
     LineRenderer ropeRenderer;
 
-    Rigidbody pulling; // the object the player is pulling
+    [NonSerialized]
+    public Rigidbody pulling; // the object the player is pulling
     Transform pullPoint;
 
     RaycastHit camToWebHit; // contains the raycasthit data for the raycast between the camera and the webicon; used for placing the webicon
@@ -99,6 +103,16 @@ public class WebControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (player.movementPaused)
+        {
+            meshRenderer.enabled = false;
+            return;
+        }
+        else
+        {
+            meshRenderer.enabled = true;
+        }
+        
         CastWebIconRays();
 
         if (Input.GetMouseButtonDown(0))
