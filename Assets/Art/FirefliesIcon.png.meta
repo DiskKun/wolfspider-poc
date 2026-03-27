@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 76f521065ccaef4479815002b75394f0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7206004832572070865
+    second: FirefliesIcon_0
+  - first:
+      213: -4917578128366958368
+    second: FirefliesIcon_1
+  - first:
+      213: 8721506706941263535
+    second: FirefliesIcon_2
+  - first:
+      213: -8467004794986411479
+    second: FirefliesIcon_3
+  - first:
+      213: -5259532452078593740
+    second: FirefliesIcon_4
+  - first:
+      213: -2203495620546075224
+    second: FirefliesIcon_5
+  - first:
+      213: 686901588896433757
+    second: FirefliesIcon_6
+  - first:
+      213: -4301182541693173163
+    second: FirefliesIcon_7
+  - first:
+      213: 7246327645763693611
+    second: FirefliesIcon_8
+  - first:
+      213: 433917986522002150
+    second: FirefliesIcon_9
+  - first:
+      213: -1539203395780529943
+    second: FirefliesIcon_10
+  - first:
+      213: -3514818730427444627
+    second: FirefliesIcon_11
+  - first:
+      213: 8671612355995979725
+    second: FirefliesIcon_12
+  - first:
+      213: -1461942756103439282
+    second: FirefliesIcon_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FirefliesIcon_0
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 499
+        width: 958
+        height: 1099
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dbd437573fd00460800000000000000
+      internalID: 7206004832572070865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirefliesIcon_1
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 1557
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e805772fb041cbb0800000000000000
+      internalID: -4917578128366958368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirefliesIcon_2
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 1370
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faebb653424090970800000000000000
+      internalID: 8721506706941263535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirefliesIcon_3
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 1336
+        width: 129
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92a4e43cff72f7a80800000000000000
+      internalID: -8467004794986411479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirefliesIcon_4
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 1159
+        width: 102
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 439573dd9136207b0800000000000000
+      internalID: -5259532452078593740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirefliesIcon_5
+      rect:
+        serializedVersion: 2
+        x: 1929
+        y: 1160
+        width: 161
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a5e831686c9b61e0800000000000000
+      internalID: -2203495620546075224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirefliesIcon_6
+      rect:
+        serializedVersion: 2
+        x: 2043
+        y: 1100
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d56c2d11b5d588900800000000000000
+      internalID: 686901588896433757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirefliesIcon_7
+      rect:
+        serializedVersion: 2
+        x: 2059
+        y: 1054
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 552444854412f44c0800000000000000
+      internalID: -4301182541693173163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirefliesIcon_8
+      rect:
+        serializedVersion: 2
+        x: 2019
+        y: 931
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2c66d3e990209460800000000000000
+      internalID: 7246327645763693611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirefliesIcon_9
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 526
+        width: 152
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e2fb481c16950600800000000000000
+      internalID: 433917986522002150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirefliesIcon_10
+      rect:
+        serializedVersion: 2
+        x: 1808
+        y: 458
+        width: 9
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e03d65aaa6a3aae0800000000000000
+      internalID: -1539203395780529943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirefliesIcon_11
+      rect:
+        serializedVersion: 2
+        x: 1812
+        y: 444
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d629bfaacfad83fc0800000000000000
+      internalID: -3514818730427444627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirefliesIcon_12
+      rect:
+        serializedVersion: 2
+        x: 1813
+        y: 433
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcf470d5e71c75870800000000000000
+      internalID: 8671612355995979725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FirefliesIcon_13
+      rect:
+        serializedVersion: 2
+        x: 1814
+        y: 426
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4cbf7c1fc226bbe0800000000000000
+      internalID: -1461942756103439282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FirefliesIcon_0: 7206004832572070865
+      FirefliesIcon_1: -4917578128366958368
+      FirefliesIcon_10: -1539203395780529943
+      FirefliesIcon_11: -3514818730427444627
+      FirefliesIcon_12: 8671612355995979725
+      FirefliesIcon_13: -1461942756103439282
+      FirefliesIcon_2: 8721506706941263535
+      FirefliesIcon_3: -8467004794986411479
+      FirefliesIcon_4: -5259532452078593740
+      FirefliesIcon_5: -2203495620546075224
+      FirefliesIcon_6: 686901588896433757
+      FirefliesIcon_7: -4301182541693173163
+      FirefliesIcon_8: 7246327645763693611
+      FirefliesIcon_9: 433917986522002150
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
