@@ -75,3 +75,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 .idea/.idea.wolfspider-poc/.idea/indexLayout.xml
 .idea/.idea.wolfspider-poc/.idea/workspace.xml
+/.idea
