@@ -12,13 +12,13 @@ G10	You did it!! Gwen is just ahead.	G11	4
 G11	Click her to let her ride on your back!	END	0
 G12	You can pull some items with your web rope...	G13	4
 G13	"Click to spin the rope, click again to pull towards you, and right click to disengage."	END	0
-G20	Didja see those termites on the other side of the couch?	G21	2
-G21	"If we don't hurry, they'll eat the couch's wooden legs!"	G22	4
+G20	Didja see those termites over there?	G21	2
+G21	"If we don't hurry, they'll eat holes into the floorboards!"	G22	4
 G22	Then the Big One will really be mad!	END	0
 G23	The termite queen has your baby Peter!!	G24	3
 G24	You better find a way to get to her before something bad happens!	END	0
 T01	Eek! You got me!	T02	4
-T02	You can have your Peter back…	T03	4
+T02	You can have your Peter back...	T03	4
 T03	But the Big One won't see all the good you've done for their house!	T04	4
-T04	"All they'll see is a creepy, crawly, 8-legged FREAK! And you'll get killed like the rest of us…"	T05	4
+T04	"All they'll see is a creepy, crawly, 8-legged FREAK! And you'll get smushed like the rest of us..."	T05	4
 T05	"So long, wolf spider."	END	0
