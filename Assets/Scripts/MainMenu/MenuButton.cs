@@ -18,6 +18,15 @@ public class MenuButton : MonoBehaviour
     private float splashScreenTime;
     private float splashScreenTimer; // the actual timer
 
+    [SerializeField]
+    private SFX_Menu SFX_Menu;
+    private AudioSource audioSource;
+    private AudioClip menuBlip;
+    private AudioClip menuSelect;
+    private AudioClip menuBack;
+    private AudioClip menuContinue;
+    private bool queueLoadGame;
+
     [Space(20)]
 
     [SerializeField]
@@ -27,6 +36,13 @@ public class MenuButton : MonoBehaviour
     {
         splashScreenTimer = splashScreenTime;
         Time.timeScale = 1f; // reset timescale
+
+        audioSource = GetComponent<AudioSource>();
+
+        menuBlip = SFX_Menu.blipSFX; // load audio hooks
+        menuSelect = SFX_Menu.selectSFX;
+        menuBack = SFX_Menu.backSFX;
+        menuContinue = SFX_Menu.continueSFX;
     }
 
     void Update()
@@ -40,13 +56,17 @@ public class MenuButton : MonoBehaviour
                 MainMenu.SetActive(true);
             }
         }
+        if (queueLoadGame && !audioSource.isPlaying)
+        {
+            StartCoroutine(LoadSceneAsync(GameplayScene));
+        }
     }
 
     public void StartButtonClick()
     {
         MainMenu.SetActive(false);
         LoadingScreen.SetActive(true);
-        StartCoroutine(LoadSceneAsync(GameplayScene));
+        queueLoadGame = true;
     }
 
     public void SettingsButtonClick()
@@ -77,6 +97,27 @@ public class MenuButton : MonoBehaviour
         while (!asyncLoad.isDone)
         {
             yield return null;
+        }
+    }
+
+    public void playMenuAudio(string clip)
+    {
+        audioSource.pitch = Random.Range(0.925f, 1.075f);
+        if (clip == "blip")
+        {
+            audioSource.PlayOneShot(menuBlip, 0.6f);
+        }
+        if (clip == "select")
+        {
+            audioSource.PlayOneShot(menuSelect, 0.6f);
+        }
+        if (clip == "back")
+        {
+            audioSource.PlayOneShot(menuBack, 0.6f);
+        }
+        if (clip == "continue")
+        {
+            audioSource.PlayOneShot(menuContinue, 0.6f);
         }
     }
 }

@@ -4,7 +4,7 @@ public class PestController : MonoBehaviour
 {
 
     [Tooltip("Add transforms of nodes here for pests to follow. Pests will loop back to the first node in the list after reaching the final node.")]
-    public Transform[] pathNodes;
+    public Transform[] pathNodes = null;
     [Tooltip("The amount of time the pest should wait at each node for before moving on to the next.")]
     public float nodePause;
     [Tooltip("The maximum distance (in Units) that the pest can target away from the next node. Setting this to 0 will make the pest target the node perfectly every time.")]
@@ -25,29 +25,33 @@ public class PestController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pauseTimer <= 0)
+        if (pathNodes != null)
         {
-            Vector3 moveDir = new Vector3(target.x - transform.position.x, target.y - transform.position.y, target.z - transform.position.z).normalized; // get direction of movement
-            moveDir *= speed; moveDir *= Time.deltaTime;
-            transform.position = new Vector3(transform.position.x + moveDir.x, transform.position.y + moveDir.y, transform.position.z + moveDir.z); // move pest
-            if (Time.timeScale > 0) { transform.eulerAngles = new Vector3(0, -(Mathf.Atan2(moveDir.z, moveDir.x) * Mathf.Rad2Deg), 0); } //rotate to proper angle
-
-            if (Vector3.Distance(transform.position, target) <= targetAcceptanceRange) // activate when within range of target location AND if path nodes have been assigned
+            if (pauseTimer <= 0)
             {
-                pauseTimer = nodePause; // reset pause timer
+                Vector3 moveDir = new Vector3(target.x - transform.position.x, target.y - transform.position.y, target.z - transform.position.z).normalized; // get direction of movement
+                moveDir *= speed; moveDir *= Time.deltaTime;
+                transform.position = new Vector3(transform.position.x + moveDir.x, transform.position.y + moveDir.y, transform.position.z + moveDir.z); // move pest
+                if (Time.timeScale > 0) { transform.eulerAngles = new Vector3(0, -(Mathf.Atan2(moveDir.z, moveDir.x) * Mathf.Rad2Deg), 0); } //rotate to proper angle
 
-                nodeID++;
-                if (nodeID == pathNodes.Length)
+                if (Vector3.Distance(transform.position, target) <= targetAcceptanceRange) // activate when within range of target location AND if path nodes have been assigned
                 {
-                    nodeID = 0; // loop back to first node in list
+                    pauseTimer = nodePause; // reset pause timer
+
+                    nodeID++;
+                    if (nodeID == pathNodes.Length)
+                    {
+                        nodeID = 0; // loop back to first node in list
+                    }
+
+                    getTargetPos(nodeID); // get new target
                 }
 
-                getTargetPos(nodeID); // get new target
             }
-            
-        } else
-        {
-            pauseTimer -= Time.deltaTime;
+            else
+            {
+                pauseTimer -= Time.deltaTime;
+            }
         }
     }
 
@@ -56,7 +60,7 @@ public class PestController : MonoBehaviour
         PlayerControl pc = other.gameObject.GetComponent<PlayerControl>();
         if (other.gameObject.tag == "Player" && pc.pounceCooldown - pc.pCDTimer <= pc.pounceDuration) //collision with player while pouncing
         {
-            webController.GetSilk(1);
+            webController.GetSilk(2);
             pc.playEatSound(); // tell the player to play the eat sound effect
             gameObject.SetActive(false); // make this inactive to free up more spawns
         }

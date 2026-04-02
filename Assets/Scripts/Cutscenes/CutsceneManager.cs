@@ -20,6 +20,7 @@ public class CutsceneManager : MonoBehaviour
         canvasID = 0; // reset canvas to display images for
         imageCanvases[canvasID].SetActive(true);
         imageCanvases[canvasID].GetComponent<CanvasFade>().resetFade();
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
