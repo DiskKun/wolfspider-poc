@@ -571,6 +571,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7286463063253516380, guid: d598ada5c046b404997ebc74a9e6e0de, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 313.1476
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286463063253516380, guid: d598ada5c046b404997ebc74a9e6e0de, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 175.6187
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286463063253516380, guid: d598ada5c046b404997ebc74a9e6e0de, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000020981
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286463063253516380, guid: d598ada5c046b404997ebc74a9e6e0de, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0000026226
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286463063253516380, guid: d598ada5c046b404997ebc74a9e6e0de, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8306166190017788400, guid: d598ada5c046b404997ebc74a9e6e0de, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8279152128496038304, guid: 05d0fb7d655b4ef49b93836908979607, type: 3}
     - target: {fileID: 8690682788539405353, guid: d598ada5c046b404997ebc74a9e6e0de, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -748,6 +772,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8735711480244205232, guid: 041946425af99ed4f845558d6601fe38, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8279152128496038304, guid: 05d0fb7d655b4ef49b93836908979607, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -906,6 +934,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7659007456955551115, guid: fec7a85a95260d943b23c3e29da2c939, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8279152128496038304, guid: 05d0fb7d655b4ef49b93836908979607, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
