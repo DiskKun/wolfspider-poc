@@ -20,9 +20,8 @@ public class GameManager : MonoBehaviour
 
     [Space(20)]
 
-    [SerializeField]
     [Tooltip("Contains a reference to the scene that will be loaded after this level is completed. Ensure that the target scene is included in the build settings scene list!")]
-    private string NextScene;
+    public string NextScene;
     private bool loadingNext = false; // whether we're loading the next level yet
 
 

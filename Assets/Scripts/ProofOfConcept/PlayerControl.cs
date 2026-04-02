@@ -1,6 +1,8 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -78,11 +80,19 @@ public class PlayerControl : MonoBehaviour
     private AudioClip walkSFX;
     private float walkRepeatDelay = 0.1f; // delay between footstep sounds
     private float walkSoundTimer = 0f;
-    
+
+    [NonSerialized]
     public bool movementPaused = false;
 
     public Vector3[] spawnPoints; // where to spawn for each level
     private int level;
+
+    [SerializeField]
+    private Image fadeOut; // image to fade over everything else when teleporting
+    [SerializeField]
+    private float teleportDelay; // how long to wait before teleporting to the next level
+    private float tpTimer; // the actual timer
+    private GameManager gm;
 
 
 
@@ -94,6 +104,7 @@ public class PlayerControl : MonoBehaviour
         pounceDuration = Mathf.Clamp(pounceDuration, 0f, pounceCooldown); // clamp pounce duration so that it's not longer than cooldown to prevent weirdness from the implementation
         pCDTimer = 0; // reset cooldown
         webIconTransform = GameObject.Find("WebIcon").GetComponent<Transform>(); // using find here because I'm lazy and it shouldn't be a performance hit at this small of a scale
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         audioSource = GetComponent<AudioSource>();
 
@@ -155,6 +166,17 @@ public class PlayerControl : MonoBehaviour
             
         }
         if (Input.GetButton("Sprint")) { sprintInput = sprintMultiplier; } else { sprintInput = 1; } // use floats instead of bools here to save on operations and make code a bit cleaner
+
+        if (tpTimer > 0)
+        {
+            tpTimer -= Time.deltaTime;
+            fadeOut.color = new Color(0, 0, 0, 1-(tpTimer / teleportDelay)); // fade to black
+            if (tpTimer <= 0) { teleportToNextLevel(); }
+        } else if (tpTimer < 0)
+        {
+            tpTimer = Math.Min(0, tpTimer + Time.deltaTime);
+            fadeOut.color = new Color(0, 0, 0, (Math.Max(-teleportDelay, -tpTimer) / teleportDelay)); // fade back in
+        }
     }
 
     private void FixedUpdate()
@@ -265,13 +287,22 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    public void teleportToNextLevel()
+    public void startTeleportTimer()
+    {
+        tpTimer = teleportDelay;
+    }
+    void teleportToNextLevel()
     {
         level++;
         if (level < spawnPoints.Length)
         {
             transform.position = spawnPoints[level];
+            tpTimer = -teleportDelay - 1;
+        } else
+        {
+            SceneManager.LoadScene(gm.NextScene); // load next scene from black
         }
+        
         
     }
 }

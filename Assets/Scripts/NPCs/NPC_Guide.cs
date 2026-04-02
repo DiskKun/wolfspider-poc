@@ -58,8 +58,9 @@ public class NPC_Guide : NPC_Base
         {
             if (nodeID < guideNodes.Length && detectPlayer()) // if the guide hasn't reached the end of the path, move to the next node
             {
-                target = guideNodes[nodeID].transform.position;
-                nodeID++;
+                OnInteract();
+                //target = guideNodes[nodeID].transform.position;
+                //nodeID++;
             }
         }
 
