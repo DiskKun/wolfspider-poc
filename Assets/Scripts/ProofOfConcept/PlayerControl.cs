@@ -71,14 +71,14 @@ public class PlayerControl : MonoBehaviour
     [Space(40)]
 
     public SFX_Pounce SFX_Pounce;
-    private AudioClip pounceSFX;
+    private AudioClip[] pounceSFX;
 
     public SFX_Eat SFX_Eat;
     private AudioClip eatSFX;
 
     public SFX_Walk SFX_Walk;
-    private AudioClip walkSFX;
-    private float walkRepeatDelay = 0.1f; // delay between footstep sounds
+    private AudioClip[] walkSFX;
+    private float walkRepeatDelay = 0.25f; // delay between footstep sounds
     private float walkSoundTimer = 0f;
 
     [NonSerialized]
@@ -130,8 +130,8 @@ public class PlayerControl : MonoBehaviour
                 walkSoundTimer -= Time.deltaTime;
                 if (walkSoundTimer <= 0f) // play footstep sound on a repeating timer
                 {
-                    walkSoundTimer = walkRepeatDelay;
-                    audioSource.PlayOneShot(walkSFX);
+                    walkSoundTimer = walkRepeatDelay/sprintInput;
+                    audioSource.PlayOneShot(walkSFX[UnityEngine.Random.Range(0,walkSFX.Length-1)], 0.1f);
                 }
             }
         } else
@@ -160,6 +160,7 @@ public class PlayerControl : MonoBehaviour
                 if (!wc.canPull && !wc.canBridge && !wc.pulling)
                 {
                     pounceInput = true; pCDTimer = pounceCooldown; pounceEndpoint = webIconTransform.position;
+                    
                 }
                 
             }
@@ -208,7 +209,7 @@ public class PlayerControl : MonoBehaviour
             // apply velocity based on player ANGLE rather than INPUT. This means players can still pounce even when not specifically moving.
             vel = Vector3.Normalize(new Vector3(-Mathf.Sin(Mathf.Deg2Rad * transform.eulerAngles.y), 0, -Mathf.Cos(Mathf.Deg2Rad * transform.eulerAngles.y))) * pounceStrength * Time.deltaTime;
             vel.y = pounceJumpStrength;
-            audioSource.PlayOneShot(pounceSFX, 1f); // play pounce SFX
+            audioSource.PlayOneShot(pounceSFX[UnityEngine.Random.Range(0, pounceSFX.Length - 1)], 0.5f); // play pounce SFX
             pounceInput = false;
         }
 

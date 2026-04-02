@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4e726c772431b4dab5d24b40c7077d, type: 3}
   m_Name: SFX_Pounce
   m_EditorClassIdentifier: 
-  pounceSFX: {fileID: 0}
+  pounceSFX:
+  - {fileID: 8300000, guid: 80f0834dfe926754eb0bde6a16194f51, type: 3}
+  - {fileID: 8300000, guid: 1cb9108956347ec4bb15ac6c0c8e8db3, type: 3}
+  - {fileID: 8300000, guid: f14faa8fb02293b4c8aa604a39fe5eca, type: 3}

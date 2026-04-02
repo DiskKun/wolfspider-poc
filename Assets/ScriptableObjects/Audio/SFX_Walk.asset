@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e784406e63298429ff99182899c1a8, type: 3}
   m_Name: SFX_Walk
   m_EditorClassIdentifier: 
-  walkSFX: {fileID: 0}
+  walkSFX:
+  - {fileID: 8300000, guid: 99a5b6b81eba8614bae0507a54c04d0c, type: 3}
+  - {fileID: 8300000, guid: e4859b8b00031894fb0356c87767f8f0, type: 3}
+  - {fileID: 8300000, guid: aedaa829af1a9f442a7087db27bfa911, type: 3}
+  - {fileID: 8300000, guid: 7ad673ea2aafb3b4cbb879c50bbd0980, type: 3}
+  - {fileID: 8300000, guid: 3a85201a6be96c94b8e633e079a4e872, type: 3}
