@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueBoxTextMesh;
     public Button dialogueBoxButton;
     public CinemachineCamera[]  cameras;
+    public Image[] profilePictures;
     
     string[][] DialogueText = new string[][] {};
     
@@ -86,6 +87,17 @@ public class DialogueManager : MonoBehaviour
             Cursor.visible = false;
             dialogueBoxTextMesh.transform.parent.gameObject.SetActive(false);
             return;
+        }
+
+        if (id[0] == 'T')
+        {
+            profilePictures[0].gameObject.SetActive(false);
+            profilePictures[1].gameObject.SetActive(true);
+        }
+        else
+        {
+            profilePictures[0].gameObject.SetActive(true);
+            profilePictures[1].gameObject.SetActive(false);
         }
 
         foreach (CinemachineCamera cam in cameras)
