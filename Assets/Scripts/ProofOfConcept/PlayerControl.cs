@@ -134,7 +134,7 @@ public class PlayerControl : MonoBehaviour
                 if (walkSoundTimer <= 0f) // play footstep sound on a repeating timer
                 {
                     walkSoundTimer = walkRepeatDelay/(sprintInput/1.5f);
-                    audioSource.PlayOneShot(walkSFX[UnityEngine.Random.Range(0,walkSFX.Length-1)], 0.075f);
+                    audioSource.PlayOneShot(walkSFX[UnityEngine.Random.Range(0,walkSFX.Length-1)], 0.1f);
                 }
             }
         } else

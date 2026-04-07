@@ -60,7 +60,7 @@ public class PestController : MonoBehaviour
         PlayerControl pc = other.gameObject.GetComponent<PlayerControl>();
         if (other.gameObject.tag == "Player" && pc.pounceCooldown - pc.pCDTimer <= pc.pounceDuration) //collision with player while pouncing
         {
-            webController.GetSilk(2);
+            webController.GetSilk(1);
             pc.playEatSound(); // tell the player to play the eat sound effect
             gameObject.SetActive(false); // make this inactive to free up more spawns
         }
