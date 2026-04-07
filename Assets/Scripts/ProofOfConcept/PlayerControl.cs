@@ -93,7 +93,7 @@ public class PlayerControl : MonoBehaviour
     private float teleportDelay; // how long to wait before teleporting to the next level
     private float tpTimer; // the actual timer
     private GameManager gm;
-
+    public Animator animator;//Animator setting for anaimtion idle and walking
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -118,6 +118,7 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (movementPaused) { rb.linearVelocity = new Vector3(); return; }
         
         if (pCDTimer > 0) { pCDTimer -= Time.deltaTime; } // reduce cooldown timer
@@ -178,6 +179,16 @@ public class PlayerControl : MonoBehaviour
             tpTimer = Math.Min(0, tpTimer + Time.deltaTime);
             fadeOut.color = new Color(0, 0, 0, (Math.Max(-teleportDelay, -tpTimer) / teleportDelay)); // fade back in
         }
+
+        float moveSpeed = new Vector3(vel.x, 0, vel.z).magnitude;
+
+        // Prevent tiny sliding from triggering walk animation
+        if (moveSpeed < 0.05f)
+        {
+            moveSpeed = 0f;
+        }
+
+        animator.SetFloat("Speed", moveSpeed);
     }
 
     private void FixedUpdate()

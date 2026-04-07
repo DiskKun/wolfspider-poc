@@ -13064,6 +13064,7 @@ MonoBehaviour:
   - {x: 33, y: 1, z: -23}
   fadeOut: {fileID: 783177947}
   teleportDelay: 2
+  animator: {fileID: 1682879236}
 --- !u!82 &1506211607
 AudioSource:
   m_ObjectHideFlags: 0
@@ -14520,8 +14521,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 48b01dc53993ebb44a54aebc4ca5fbc6, type: 2}
-  m_sharedMaterial: {fileID: 1246106800837105446, guid: 48b01dc53993ebb44a54aebc4ca5fbc6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
