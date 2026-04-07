@@ -11,6 +11,8 @@ public class PlayerControl : MonoBehaviour
 
     [SerializeField]
     private float speed = 1; // speed to add to velocity every physics update
+    [NonSerialized]
+    public float velMag = 0f;
     [SerializeField]
     [Tooltip("Amount of friction to be applied every physics update. Values closer to 1 stop more quickly, smaller values are more slippery. Cannot go above 1 or below 0.")]
     [Range(0f, 1f)]
@@ -130,8 +132,8 @@ public class PlayerControl : MonoBehaviour
                 walkSoundTimer -= Time.deltaTime;
                 if (walkSoundTimer <= 0f) // play footstep sound on a repeating timer
                 {
-                    walkSoundTimer = walkRepeatDelay/sprintInput;
-                    audioSource.PlayOneShot(walkSFX[UnityEngine.Random.Range(0,walkSFX.Length-1)], 0.1f);
+                    walkSoundTimer = walkRepeatDelay/(sprintInput/1.5f);
+                    audioSource.PlayOneShot(walkSFX[UnityEngine.Random.Range(0,walkSFX.Length-1)], 0.075f);
                 }
             }
         } else
@@ -228,6 +230,7 @@ public class PlayerControl : MonoBehaviour
             
         }
         rb.linearVelocity = vel; //update player velocity
+        velMag = vel.magnitude; // update velocity magnitude for animation
 
     }
 
