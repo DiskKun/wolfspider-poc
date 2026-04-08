@@ -22232,8 +22232,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.01, y: 0.01, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.01, y: 0.01, z: 0.016357455}
+  m_Center: {x: 0, y: 0, z: -0.0031787392}
 --- !u!1 &1245947193
 GameObject:
   m_ObjectHideFlags: 0
@@ -30257,8 +30257,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 48b01dc53993ebb44a54aebc4ca5fbc6, type: 2}
+  m_sharedMaterial: {fileID: 1246106800837105446, guid: 48b01dc53993ebb44a54aebc4ca5fbc6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
